@@ -4,21 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101d23">
-  <meta name="description" content="Haozheng Pei — Mathematics and Industrial & Systems Engineering at Georgia Tech. Research in generative models, finite-sample guarantees, and probabilistic machine learning.">
-  <meta property="og:title" content="Haozheng Pei — Generative models & probability">
-  <meta property="og:description" content="Research in generative modeling, statistical guarantees, and probabilistic machine learning at Georgia Tech.">
+  <meta name="description" content="Haozheng Pei — Georgia Tech, generative models, and probability. Outside research: badminton, tennis, cycling, and life with two huskies.">
+  <meta property="og:title" content="Haozheng Pei — Research & life">
+  <meta property="og:description" content="Generative models and probability at Georgia Tech. Badminton, tennis, cycling, and two huskies away from the desk.">
   <meta property="og:type" content="website">
-  <title>Haozheng Pei — Generative models & probability</title>
+  <title>Haozheng Pei — Research & life</title>
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="personal.css">
   <script src="script.js" defer></script>
+  <script src="personal.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <a class="wordmark" href="#home" aria-label="Haozheng Pei, home">hp<span class="wordmark-dot">.</span></a>
     <nav aria-label="Main navigation">
-      <a href="#research">Research</a><a href="#about">About</a><a href="#contact">Contact</a>
+      <a href="#research">Research</a><a href="#life">Life</a><a href="#about">About</a><a href="#contact">Contact</a>
       <a class="nav-cv" href="../assets/Haozheng_Pei_CV.pdf">CV <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
@@ -29,6 +31,7 @@
         <h1 id="hero-title">Haozheng<br><em>Pei.</em></h1>
         <p class="hero-intro">I study generative models<br>and the probability behind them.</p>
         <p class="hero-bio">Mathematics &amp; Industrial and Systems Engineering at Georgia Tech. Interested in what models generate, what they miss, and what we can guarantee.</p>
+        <p class="hero-personal">Also: rackets, bike rides, and <a href="#life">two huskies.</a></p>
         <div class="hero-links"><a class="button button-light" href="#research">Explore research <span aria-hidden="true">↘</span></a><a class="text-link" href="../assets/Haozheng_Pei_CV.pdf">Download CV <span aria-hidden="true">↗</span></a></div>
       </div>
       <figure class="flow-figure">
@@ -49,7 +52,7 @@
           </div>
         </figcaption>
       </figure>
-      <div class="hero-bottom"><span>Generative modeling · Statistical guarantees · Probabilistic ML</span><a href="#research" aria-label="Scroll to research">Scroll to explore <span aria-hidden="true">↓</span></a></div>
+      <div class="hero-bottom"><span>Research · Sport · Life with two huskies</span><a href="#life" aria-label="Explore life outside research">Outside research <span aria-hidden="true">↓</span></a></div>
     </section>
 
     <section class="research section-light" id="research" aria-labelledby="research-title">
@@ -89,8 +92,35 @@
       </article>
     </section>
 
+    <section class="life" id="life" aria-labelledby="life-title">
+      <div class="life-heading reveal">
+        <div><p class="eyebrow dark-eyebrow">02 / Outside research</p><h2 id="life-title">Away from<br><em>the desk.</em></h2></div>
+        <p class="life-intro">I play badminton and tennis, enjoy cycling, and have two huskies.</p>
+      </div>
+      <div class="life-spread">
+        <article class="husky-story reveal" aria-labelledby="huskies-title">
+          <div class="husky-heading"><span>At home</span><h3 id="huskies-title">Life with<br>two huskies.</h3></div>
+          <figure class="husky-picture"><img src="../assets/life-huskies.svg" width="800" height="580" loading="lazy" alt="Illustration of two huskies sitting together."></figure>
+        </article>
+        <div class="off-duty reveal">
+          <div class="hobby-selector" role="group" aria-label="Explore my sports" hidden>
+            <button type="button" data-hobby="Badminton" aria-pressed="true" aria-controls="scene-badminton">Badminton</button>
+            <button type="button" data-hobby="Tennis" aria-pressed="false" aria-controls="scene-tennis">Tennis</button>
+            <button type="button" data-hobby="Cycling" aria-pressed="false" aria-controls="scene-cycling">Cycling</button>
+          </div>
+          <div class="hobby-stage">
+            <figure class="hobby-scene" id="scene-badminton"><img src="../assets/life-badminton.svg" width="640" height="450" loading="lazy" alt="Illustration of a badminton court with a shuttlecock."></figure>
+            <figure class="hobby-scene" id="scene-tennis" hidden><img src="../assets/life-tennis.svg" width="640" height="450" loading="lazy" alt="Illustration of a tennis court with a tennis ball."></figure>
+            <figure class="hobby-scene" id="scene-cycling" hidden><img src="../assets/life-cycling.svg" width="640" height="450" loading="lazy" alt="Illustration of a bicycle on a winding path."></figure>
+          </div>
+          <div class="hobby-caption"><span>On the court / On the road</span><span class="hobby-count" aria-live="polite">Badminton</span></div>
+          <div class="game-note"><span class="small-label">I also play</span><p>CS:GO <span>&amp;</span> Civilization VI</p></div>
+        </div>
+      </div>
+    </section>
+
     <section class="about section-light" id="about" aria-labelledby="about-title">
-      <div class="about-heading reveal"><p class="eyebrow dark-eyebrow">02 / Background</p><h2 id="about-title">A foundation<br>in <em>mathematics.</em></h2></div>
+      <div class="about-heading reveal"><p class="eyebrow dark-eyebrow">03 / Background</p><h2 id="about-title">A foundation<br>in <em>mathematics.</em></h2></div>
       <div class="about-content">
         <div class="education reveal"><span class="small-label">Education</span><h3>Georgia Institute<br>of Technology</h3><p>B.S. Mathematics<br>B.S. Industrial and Systems Engineering</p><div class="education-meta"><span>Expected May 2028</span><span>GPA 3.77 / 4.00</span></div><p class="muted">Concentration in Artificial Intelligence and Operations Research.</p></div>
         <div class="teaching reveal"><span class="small-label">Teaching</span><h3>Making statistics<br>make sense.</h3><p>Undergraduate Teaching Assistant<br>ISyE 3030 · Basic Statistical Methods</p><p class="muted">Georgia Tech · August 2025 — Present<br>Supporting a class of 70+ students.</p></div>
@@ -100,14 +130,14 @@
     </section>
 
     <section class="experience" id="experience" aria-labelledby="experience-title">
-      <div class="experience-heading reveal"><p class="eyebrow">03 / Experience</p><h2 id="experience-title">Beyond<br><em>the research.</em></h2></div>
+      <div class="experience-heading reveal"><p class="eyebrow">04 / Experience</p><h2 id="experience-title">Work in<br><em>industry.</em></h2></div>
       <div class="experience-list">
         <article class="experience-item reveal"><div class="entry-meta"><span>Shanghai</span><span>May — Aug 2026</span></div><h3>UnionPay Advisors</h3><p class="role">Data Science Intern</p><p>Credit-default modeling with LightGBM on 100K+ transactions, with feature engineering and stability analysis.</p><div class="experience-metrics"><span><b>0.78</b> Out-of-time AUC</span><span><b>700+</b> Engineered features</span></div></article>
         <article class="experience-item reveal"><div class="entry-meta"><span>New York · Hybrid</span><span>Feb — Apr 2025</span></div><h3>Hyde Park<br> Investment Service</h3><p class="role">Quantitative Research Intern</p><p>Combined LLM-assisted news sentiment with macroeconomic data for gold-price forecasting using logistic regression and XGBoost.</p><div class="experience-metrics"><span><b>≈0.8</b> AUC</span><span><b>2.4</b> Backtested Sharpe</span></div></article>
       </div>
     </section>
 
-    <section class="contact section-light" id="contact" aria-labelledby="contact-title"><div class="reveal"><p class="eyebrow dark-eyebrow">04 / Contact</p><h2 id="contact-title">Let’s talk<br><em>research.</em></h2><a class="email" href="mailto:hpei8@gatech.edu">hpei8@gatech.edu <span aria-hidden="true">↗</span></a></div><div class="contact-links reveal"><a href="../assets/Haozheng_Pei_CV.pdf">Curriculum vitae <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/haozheng-pei/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="../academic/index.html">Academic version <span aria-hidden="true">↗</span></a></div></section>
+    <section class="contact section-light" id="contact" aria-labelledby="contact-title"><div class="reveal"><p class="eyebrow dark-eyebrow">05 / Contact</p><h2 id="contact-title">Say<br><em>hello.</em></h2><a class="email" href="mailto:hpei8@gatech.edu">hpei8@gatech.edu <span aria-hidden="true">↗</span></a></div><div class="contact-links reveal"><a href="../assets/Haozheng_Pei_CV.pdf">Curriculum vitae <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/haozheng-pei/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="../academic/index.html">Academic version <span aria-hidden="true">↗</span></a></div></section>
   </main>
   <footer><a class="footer-name" href="#home">Haozheng Pei</a><span>Georgia Institute of Technology</span><a href="../index.html">Compare versions <span aria-hidden="true">↗</span></a></footer>
 </body>

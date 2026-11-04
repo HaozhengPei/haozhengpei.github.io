@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 580" role="img" aria-labelledby="title desc">
+<title id="title">Two huskies</title><desc id="desc">An original illustration of two huskies sitting together in warm afternoon colors.</desc>
+<rect width="800" height="580" fill="#e8b58e"/>
+<path d="M124 435V294a276 276 0 0 1 552 0v141" fill="#f1cfaa"/>
+<circle cx="595" cy="125" r="49" fill="#f8e2be"/>
+<path d="M0 459Q210 423 400 455T800 448V580H0" fill="#d6a382"/>
+<g fill="none" stroke="#bb8b70" stroke-width="1.4"><path d="M43 495q50-8 100 0m480-5q70-10 137 0M280 532q115-10 237 0"/><path d="M85 417q-14-25-7-47m7 47q20-15 17-34M715 429q4-35 20-55m-20 55q-19-21-14-40"/></g>
+<ellipse cx="404" cy="488" rx="226" ry="24" fill="#805e4e" opacity=".12"/>
+<g stroke="#2b4543" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M221 421q-61-81-78-22c-15 55 31 90 104 72" fill="#71847d"/>
+<path d="M207 431q-48-58-48-23c0 29 27 46 61 45" fill="#f2ead7" stroke="none"/>
+<path d="M250 289c-27 45-44 113-35 168 7 35 161 36 172 0 8-49-10-123-37-168Z" fill="#71847d"/>
+<path d="M269 312q31 20 62 0c29 59 40 107 20 153h-99c-19-47-9-102 17-153" fill="#f2ead7" stroke="none"/>
+<path d="M266 372l-8 94q-23 2-28 18h56l4-106m47-6 8 94q23 2 28 18h-56l-4-106" fill="#f2ead7"/>
+<path d="M232 225 218 123q41 8 72 58m61 43 20-102q-42 8-74 60" fill="#586e69"/>
+<path d="m236 190-6-46q22 10 38 33m73 14 15-48q-23 9-39 34" fill="#d3b4a0" stroke="none"/>
+<path d="M225 207q8-41 69-41t69 41l15 55-16-1-8 25-16-6q-45 54-88 0l-17 6-8-26-15 1Z" fill="#71847d"/>
+<path d="M238 209q22-19 40 6l16 34 16-34q17-25 39-6l2 48-14 20q-42 52-85 0l-15-20Z" fill="#f2ead7" stroke="none"/>
+<path d="m281 180 13 54 14-54" fill="#586e69" stroke="none"/>
+<path d="m246 230 21 3m54 0 20-3" fill="none"/>
+<ellipse cx="260" cy="235" rx="4.3" ry="5.3" fill="#2b4543" stroke="none"/><ellipse cx="328" cy="235" rx="4.3" ry="5.3" fill="#2b4543" stroke="none"/>
+<path d="M283 263q11-7 22 0-4 13-11 13t-11-13" fill="#2b4543"/>
+<path d="M294 276v10m-14 3q14 8 28 0" fill="none"/>
+<path d="m261 315 33 11 35-11" stroke="#b06e4d" stroke-width="7" fill="none"/>
+<circle cx="294" cy="333" r="6" fill="#d8b66a" stroke-width="1.5"/>
+</g>
+<g stroke="#2b4543" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M574 432q59-70 77-13c14 47-32 74-89 46" fill="#334f51"/>
+<path d="M591 444q42-48 42-20c0 22-19 35-46 34" fill="#eee8d9" stroke="none"/>
+<path d="M458 302c-32 45-46 110-35 157 10 30 160 34 173-1 13-45-10-112-39-156Z" fill="#334f51"/>
+<path d="M481 321q29 16 54-1c23 47 33 98 17 147h-88c-18-42-9-99 17-146" fill="#eee8d9" stroke="none"/>
+<path d="M478 382l-6 85q-23 1-29 17h55l3-100m35-2 8 85q23 1 29 17h-56l-4-100" fill="#eee8d9"/>
+<path d="m437 244-7-99q40 9 68 54m65 40 27-97q-45 3-81 55" fill="#334f51"/>
+<path d="m449 212-5-46q24 11 38 35m68 7 22-45q-26 7-43 26" fill="#baaaa0" stroke="none"/>
+<path d="M439 227q11-41 71-37t65 47l10 53-16-3-10 24-16-8q-49 48-88-9l-17 4-6-25-15-1Z" fill="#334f51"/>
+<path d="M450 231q21-13 38 10l17 32 20-32q20-22 39-5l-3 44-16 21q-46 44-83-9l-14-22Z" fill="#eee8d9" stroke="none"/>
+<path d="m497 202 8 52 18-50" fill="#f2ebdc" stroke="none"/>
+<path d="m458 254 20 4m54 4 21-3" fill="none"/>
+<ellipse cx="471" cy="259" rx="4.2" ry="5.2" fill="#2b4543" stroke="none"/><ellipse cx="539" cy="264" rx="4.2" ry="5.2" fill="#2b4543" stroke="none"/>
+<path d="M494 285q12-6 22 2-5 12-12 11t-10-13" fill="#2b4543"/>
+<path d="m504 299-1 8m-14 3q13 8 28 2" fill="none"/>
+<path d="m476 337 30 12 36-6" fill="none" stroke="#9ab1a3" stroke-width="7"/>
+<circle cx="507" cy="356" r="6" fill="#d8b66a" stroke-width="1.5"/>
+</g>
+<g fill="#f7dfbd" opacity=".65"><circle cx="166" cy="168" r="2"/><circle cx="664" cy="280" r="2"/><circle cx="110" cy="319" r="1.5"/></g>
+</svg>
