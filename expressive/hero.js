@@ -23,68 +23,115 @@
     if (symbol) symbol.textContent = playing ? 'Ⅱ' : '▷';
   }
 
-  // Broad, overlapping translucent sheets form a single moving veil.
-  // The curves evolve continuously; there are no endpoints or demo states.
-  function veil(index, time, inset = 0) {
-    const k = index;
-    const drift = Math.sin(time * 0.19) * 0.045;
-    const lift = Math.sin(time * 0.13 + 0.6) * 0.037;
-    const fold = Math.sin(time * 0.16 + k * 0.13) * 0.028;
-    const breath = Math.cos(time * 0.11 + k * 0.17) * 0.018;
-    const point = (x, y) => [x * width, y * height];
-    const move = (x, y) => ctx.moveTo(...point(x, y));
-    const line = (x, y) => ctx.lineTo(...point(x, y));
-    const curve = (x1, y1, x2, y2, x, y) => ctx.bezierCurveTo(...point(x1, y1), ...point(x2, y2), ...point(x, y));
-    ctx.beginPath();
-    move(-0.12, 0.97 - k * 0.021 + inset);
-    curve(0.31, 0.98 - k * 0.016 + lift, 0.12 + drift, 0.38 - k * 0.016 + fold, 0.48, 0.46 - k * 0.012 + breath + inset);
-    curve(0.82 + drift, 0.53 - k * 0.009 + fold, 0.58 - drift, 0.05 + lift, 1.08, -0.09 + k * 0.014 + inset);
-    line(1.12, 0.14 + k * 0.012 - inset);
-    curve(0.70 - drift, 0.23 + lift, 0.94 + drift, 0.79 - k * 0.012 + fold, 0.52, 0.67 - k * 0.008 + breath - inset);
-    curve(0.18 + drift, 0.59 - k * 0.008 + fold, 0.33, 1.10 - k * 0.010 + lift, -0.12, 1.10 - k * 0.012 - inset);
-    ctx.closePath();
+  let rows = 92, strands = 48, scale = 1;
+  let grid = [], order = [];
+  const TAU = Math.PI * 2;
+
+  function surface(u, v, time, point = {}) {
+    const phase = time * 0.15;
+    const angleAlong = u * TAU;
+    const r = (2 + Math.cos(3 * angleAlong)) / 3;
+    const dr = -Math.sin(3 * angleAlong);
+    let tx = dr * Math.cos(2 * angleAlong) - 2 * r * Math.sin(2 * angleAlong);
+    let ty = dr * Math.sin(2 * angleAlong) + 2 * r * Math.cos(2 * angleAlong);
+    let tz = Math.cos(3 * angleAlong);
+    const tangentLength = Math.hypot(tx, ty, tz);
+    tx /= tangentLength; ty /= tangentLength; tz /= tangentLength;
+    const normalLength = Math.hypot(tx, ty);
+    const nx = -ty / normalLength, ny = tx / normalLength;
+    const bx = -tz * ny, by = tz * nx, bz = tx * ny - ty * nx;
+    const twist = angleAlong * 1.5 + Math.sin(phase * 0.6) * 0.14;
+    const breadth = 0.20 + Math.cos(3 * angleAlong + phase * 0.35) * 0.018;
+    const across = v * breadth;
+    const cosTwist = Math.cos(twist), sinTwist = Math.sin(twist);
+    const breath = 1 + Math.sin(phase * 0.55) * 0.028;
+    let x = r * Math.cos(2 * angleAlong) * breath + across * (nx * cosTwist + bx * sinTwist);
+    let y = r * Math.sin(2 * angleAlong) * breath + across * (ny * cosTwist + by * sinTwist);
+    let z = Math.sin(3 * angleAlong) / 3 + across * bz * sinTwist;
+    z += Math.sin(4 * angleAlong - phase) * (1 - v * v) * 0.018;
+    const yaw = -0.36 + Math.sin(phase * 0.6) * 0.13;
+    const turnedX = x * Math.cos(yaw) + z * Math.sin(yaw);
+    z = -x * Math.sin(yaw) + z * Math.cos(yaw); x = turnedX;
+    const pitchedY = y * 0.978 - z * 0.208;
+    z = y * 0.208 + z * 0.978; y = pitchedY;
+    const angle = -0.23;
+    const screenX = x * Math.cos(angle) - y * Math.sin(angle);
+    const screenY = x * Math.sin(angle) + y * Math.cos(angle);
+    const perspective = 4.8 / (4.8 - z);
+    point.x = width * 0.51 + screenX * scale * perspective;
+    point.y = height * 0.50 + screenY * scale * perspective;
+    point.z = z; point.perspective = perspective;
+    return point;
   }
 
-  function sheetGradient(index, opacity) {
-    const gradient = ctx.createLinearGradient(width * 0.04, height * 0.96, width * 0.95, height * 0.06);
-    const a = opacity;
-    gradient.addColorStop(0, 'rgba(62,104,141,0)');
-    gradient.addColorStop(0.16, `rgba(77,131,176,${a * 0.28})`);
-    gradient.addColorStop(0.35, `rgba(149,176,207,${a * 0.78})`);
-    gradient.addColorStop(0.48, `rgba(190,184,211,${a * 0.70})`);
-    gradient.addColorStop(0.60, `rgba(229,225,219,${a})`);
-    gradient.addColorStop(0.73, `rgba(161,190,211,${a * 0.68})`);
-    gradient.addColorStop(0.85, index % 3 === 0 ? `rgba(205,170,130,${a * 0.52})` : `rgba(112,151,188,${a * 0.42})`);
-    gradient.addColorStop(1, 'rgba(75,111,147,0)');
-    return gradient;
+  function path(points) {
+    ctx.beginPath();
+    ctx.moveTo(points[0].x, points[0].y);
+    for (let i = 1; i < points.length; i += 1) ctx.lineTo(points[i].x, points[i].y);
   }
 
   function draw() {
     if (!width || !height) return;
     ctx.clearRect(0, 0, width, height);
+    for (let i = 0; i <= rows; i += 1) {
+      for (let j = 0; j <= strands; j += 1) surface(i / rows, j * 2 / strands - 1, elapsed, grid[i][j]);
+    }
+    for (const strip of order) strip.z = (grid[strip.i][strands / 2].z + grid[strip.i + 1][strands / 2].z) / 2;
+    order.sort((a, b) => a.z - b.z);
     ctx.save();
-    ctx.globalCompositeOperation = 'screen';
+    ctx.lineCap = 'round';
 
-    // A soft underlayer makes the edges luminous without outlines or stars.
-    ctx.filter = `blur(${compact ? 14 : 24}px)`;
-    ctx.fillStyle = sheetGradient(0, 0.20);
-    veil(0, elapsed); ctx.fill();
+    // The softly lit silhouette sits behind the folded, depth-sorted fabric.
+    ctx.filter = `blur(${compact ? 10 : 18}px)`;
+    ctx.strokeStyle = 'rgba(105,156,196,0.12)';
+    ctx.lineWidth = compact ? 15 : 26;
+    path(grid.map(line => line[Math.floor(strands * 0.68)])); ctx.stroke();
     ctx.filter = 'none';
 
-    const layers = compact ? 5 : 8;
-    for (let i = 0; i < layers; i += 1) {
-      const k = i * 7 / Math.max(1, layers - 1);
-      ctx.filter = i < 2 ? `blur(${compact ? 3 : 5}px)` : 'none';
-      ctx.fillStyle = sheetGradient(i, compact ? 0.115 : 0.085);
-      veil(k, elapsed); ctx.fill();
+    for (const strip of order) {
+      const i = strip.i, a = grid[i], b = grid[i + 1];
+      const front = Math.max(0, Math.min(1, (strip.z + 1.0) / 2));
+      const fade = 0.92;
+      // A dark translucent body lets nearer folds obscure the distant threads.
+      path([a[0], a[strands], b[strands], b[0]]); ctx.closePath();
+      ctx.fillStyle = `rgba(13,23,35,${0.67 * fade})`; ctx.fill();
+      const tint = ctx.createLinearGradient(a[0].x, a[0].y, a[strands].x, a[strands].y);
+      tint.addColorStop(0, 'rgba(108,155,191,0)');
+      tint.addColorStop(0.28, `rgba(111,151,188,${0.06 * fade})`);
+      tint.addColorStop(0.55, `rgba(174,185,208,${(0.07 + front * 0.11) * fade})`);
+      tint.addColorStop(0.78, `rgba(92,132,168,${0.06 * fade})`);
+      tint.addColorStop(1, 'rgba(88,128,167,0)');
+      ctx.fillStyle = tint; ctx.fill();
+
+      for (let group = 0; group < 4; group += 1) {
+        ctx.beginPath();
+        for (let j = group; j <= strands; j += 4) {
+          ctx.moveTo(a[j].x, a[j].y); ctx.lineTo(b[j].x, b[j].y);
+        }
+        const alpha = (0.16 + front * 0.38 + group * 0.035) * fade;
+        ctx.strokeStyle = group === 2 ? `rgba(199,211,226,${alpha})` : `rgba(125,172,209,${alpha})`;
+        ctx.lineWidth = compact ? 0.40 : 0.48; ctx.stroke();
+      }
+      // A narrow warm seam, embedded in the fabric rather than an orbit or trace.
+      const seam = Math.round(strands * 0.77);
+      ctx.beginPath();ctx.moveTo(a[seam].x,a[seam].y);ctx.lineTo(b[seam].x,b[seam].y);
+      ctx.strokeStyle = `rgba(218,180,138,${(0.23 + front * 0.45) * fade})`;
+      ctx.lineWidth = compact ? 0.65 : 0.8;ctx.stroke();
+
+      const grains = compact ? 3 : 7;
+      for (let g = 0; g < grains; g += 1) {
+        const seed = Math.sin(i * 127.1 + g * 311.7) * 43758.5453;
+        const v = (seed - Math.floor(seed)) * 2 - 1;
+        const p = surface((i + (g + 0.5) / grains) / rows, v, elapsed);
+        const loosen = Math.pow(Math.abs(v), 9) * (0.5 + 0.5 * Math.sin(elapsed * 0.24 + i * 0.37));
+        p.x += Math.sin(i * 2.1 + elapsed * 0.20) * loosen * scale * 0.032;
+        p.y += Math.cos(i * 1.7 - elapsed * 0.17) * loosen * scale * 0.025;
+        const size = (compact ? 0.55 : 0.68) * p.perspective;
+        ctx.fillStyle = `rgba(204,224,239,${(0.27 + front * 0.53) * fade})`;
+        ctx.fillRect(p.x - size / 2, p.y - size / 2, size, size);
+      }
     }
-
-    // One broad fold catches a little more light; it remains a filled surface.
-    ctx.filter = `blur(${compact ? 2 : 3}px)`;
-    ctx.fillStyle = sheetGradient(2, 0.12);
-    veil(3.6, elapsed, 0.022); ctx.fill();
     ctx.restore();
-
     if (!ready) {
       ready = true;
       stage.classList.add('is-ready');
@@ -99,6 +146,10 @@
     width = box.width; height = box.height;
     if (!width || !height) return;
     compact = width < 500;
+    rows = compact ? 64 : 92; strands = compact ? 28 : 48;
+    scale = Math.min(width * 0.225, height * 0.34);
+    grid = Array.from({ length: rows + 1 }, () => Array.from({ length: strands + 1 }, () => ({})));
+    order = Array.from({ length: rows }, (_, i) => ({ i, z: 0 }));
     const dpr = Math.min(window.devicePixelRatio || 1, compact ? 1.5 : 2);
     canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
