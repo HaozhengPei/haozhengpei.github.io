@@ -1,0 +1,112 @@
+@font-face {
+  font-family: 'Noto Sans SC Web';
+  src: url('fonts/noto-sans-sc-site.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Serif SC Web';
+  src: url('fonts/noto-serif-sc-site.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+html[lang='zh-CN'] {
+  --sans: 'Noto Sans SC Web', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --serif: 'Noto Serif SC Web', 'Songti SC', serif;
+  font-synthesis: none;
+  line-break: strict;
+}
+html[lang='zh-CN'] body { letter-spacing: .01em; }
+html[lang='zh-CN'] h1,
+html[lang='zh-CN'] h2,
+html[lang='zh-CN'] h3,
+html[lang='zh-CN'] h4 { letter-spacing: .025em; }
+html[lang='zh-CN'] .language-switch { letter-spacing: 0; }
+
+/* A quiet, consistent sans serif for the cinematic page. */
+html.zh-personal { --sans: Manrope, 'Noto Sans SC Web', 'PingFang SC', sans-serif; }
+html.zh-personal .hero h1 {
+  font-size: clamp(40px, 3.8vw, 54px);
+  font-weight: 450;
+  line-height: 1.3;
+  letter-spacing: .045em;
+}
+html.zh-personal .hero-intro { font-size: 17px; line-height: 1.95; letter-spacing: .01em; }
+html.zh-personal .hero-personal { font-size: 14px; line-height: 1.95; }
+html.zh-personal .section-heading h2 { font-size: clamp(38px, 4vw, 58px); line-height: 1.25; font-weight: 450; }
+html.zh-personal .lead-copy h3 { font-size: clamp(27px, 2.7vw, 37px); line-height: 1.5; font-weight: 450; }
+html.zh-personal .current-project h3,
+html.zh-personal .project-copy h3,
+html.zh-personal .story-copy h3,
+html.zh-personal .background-grid h3,
+html.zh-personal .sports-row h3 { font-size: 27px; line-height: 1.5; font-weight: 450; }
+html.zh-personal .dog-story h3 { font-size: 33px; }
+html.zh-personal .lead-copy>p:not(.project-meta):not(.project-date),
+html.zh-personal .project-copy>p:not(.project-meta):not(.project-subtitle),
+html.zh-personal .current-project-copy,
+html.zh-personal .story-copy>p:not(.small-label),
+html.zh-personal .sports-row>p,
+html.zh-personal .background-grid p:not(.small-label) { font-size: 14px; line-height: 1.95; }
+html.zh-personal .personal-note>p { font-size: clamp(20px, 2.1vw, 29px); line-height: 1.85; letter-spacing: .02em; }
+html.zh-personal .contact h2 { font-size: clamp(46px, 6vw, 82px); line-height: 1.4; font-weight: 450; }
+
+/* Serif headings give the academic page a restrained editorial rhythm. */
+html.zh-academic h1 { font-size: 60px; font-weight: 500; line-height: 1.35; letter-spacing: .055em; }
+html.zh-academic .intro-focus { font-size: 26px; line-height: 1.65; letter-spacing: .025em; font-weight: 500; }
+html.zh-academic .intro-body,
+html.zh-academic .research-item p,
+html.zh-academic .experience-entry p,
+html.zh-academic .education-entry p,
+html.zh-academic .section-content>p,
+html.zh-academic .personal-copy p { font-size: 15px; line-height: 1.95; }
+html.zh-academic .intro-personal { font-size: 14px; line-height: 1.95; }
+html.zh-academic .section-heading h2 { font-size: 29px; line-height: 1.5; font-weight: 500; }
+html.zh-academic .research-item h3 { font-size: 25px; line-height: 1.6; font-weight: 500; }
+html.zh-academic .intro-note p { font-size: 20px; line-height: 1.65; }
+html.zh-academic .teaching-name { font-size: 25px; line-height: 1.6; font-weight: 500; }
+html.zh-academic .contact-section h2 { font-size: 32px; line-height: 1.5; font-weight: 500; }
+html.zh-academic .contact-email { font-family: Georgia, 'Times New Roman', serif; }
+html.zh-academic .eyebrow,
+html.zh-academic .margin-label { letter-spacing: .12em; }
+html.zh-academic .role { font-size: 12px !important; }
+html.zh-academic .topic-line { font-size: 11px; }
+
+@media (max-width: 760px) {
+  html.zh-personal .hero h1 { font-size: 38px; }
+  html.zh-personal .hero-intro { font-size: 16px; }
+  html.zh-personal .hero-personal { font-size: 13px; }
+  html.zh-personal .section-heading h2 { font-size: 39px; }
+  html.zh-personal .lead-copy h3 { font-size: 27px; }
+  html.zh-personal .current-project h3,
+  html.zh-personal .project-copy h3,
+  html.zh-personal .story-copy h3,
+  html.zh-personal .background-grid h3,
+  html.zh-personal .sports-row h3 { font-size: 24px; }
+  html.zh-personal .dog-story h3 { font-size: 30px; }
+  html.zh-personal .contact h2 { font-size: 48px; }
+  html.zh-academic h1 { font-size: 46px; }
+  html.zh-academic .intro-focus { font-size: 23px; }
+  html.zh-academic .section-heading h2 { font-size: 27px; }
+  html.zh-academic .research-item h3 { font-size: 23px; }
+  html.zh-academic .intro-note p { font-size: 17px; }
+  html.zh-academic .contact-section h2 { font-size: 28px; }
+}
+@media (max-width: 390px) {
+  html.zh-personal .hero h1 { font-size: 36px; }
+  html.zh-personal .lead-copy h3 { font-size: 24px; }
+  html.zh-personal .story-copy h3 { font-size: 23px; }
+  html.zh-academic h1 { font-size: 42px; }
+  html.zh-academic .research-item h3 { font-size: 22px; }
+}
+@media print {
+  html.zh-academic h1 { font-size: 30pt; }
+  html.zh-academic .intro-body,
+  html.zh-academic .research-item p,
+  html.zh-academic .experience-entry p,
+  html.zh-academic .education-entry p,
+  html.zh-academic .personal-copy p { font-size: 10pt; }
+  html.zh-academic .research-item h3 { font-size: 16pt; }
+}
