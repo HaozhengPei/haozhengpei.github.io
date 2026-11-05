@@ -11,9 +11,11 @@
   <link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/">
   <link rel="icon" href="../assets/favicon.svg?v=9bde83f793" type="image/svg+xml">
   <link rel="preload" href="../assets/Manrope-Regular.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=7dbbb86f8a">
+  <link rel="stylesheet" href="styles.css?v=a27b406e12">
   <script src="site.js?v=37a07d27ac" defer></script><script src="hero.js?v=54f05e9cb5" defer></script>
   <script src="../language.js?v=802c5b58a4" defer></script>
+  <link rel="stylesheet" href="../assets/photo-viewer.css?v=28ba1ac8b4">
+  <script src="../assets/photo-viewer.js?v=dce5b9a9ef" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -26,8 +28,8 @@
 <main id="main">
   <section class="hero" id="home" aria-labelledby="name">
     <div class="hero-copy">
-      <p class="hello">Hi, I’m</p>
-      <h1 id="name">Haozheng Pei</h1>
+      <div class="hero-identity"><a class="hero-portrait" href="../assets/photos/haozheng-portrait.jpg" data-photo data-caption="Haozheng Pei"><img src="../assets/photos/haozheng-portrait.jpg" alt="Haozheng Pei" width="2587" height="3621" decoding="async"></a><div><p class="hello">Hi, I’m</p>
+      <h1 id="name">Haozheng Pei</h1></div></div>
       <p class="hero-intro">I’m an undergraduate at Georgia Tech working on <strong>flow matching, diffusion, and world models.</strong></p>
       <p class="hero-personal">Outside research, I play tennis and badminton. My two huskies, <a href="#harvard-yale">Harvard and Yale</a>, are like brothers to me.</p>
       <a class="hero-cta" href="#research">My research <span aria-hidden="true">↘</span></a>
@@ -59,11 +61,21 @@
     <div class="section-heading"><h2 id="life-title">Life<span>.</span></h2></div>
     <div class="personal-note"><span class="note-star" aria-hidden="true">✳</span><p>I’m an optimist. Cycling was my first real lesson in persistence. I’ve wanted to do research for a long time, and I want to keep doing it—whether in academia or industry.</p></div>
     <div class="life-grid">
-      <article class="cycling-story"><div class="story-copy"><p class="small-label">Cycling in Beijing</p><h3>A ride to Tiananmen.<br>Or up a mountain.</h3><p>Those are some of my favorite ways to spend a day. I haven’t kept up cycling in the U.S., and I miss it.</p></div><img src="../assets/cycling-night.svg?v=157e70e885" width="720" height="380" alt="Illustration of a road winding through mountains at dusk." loading="lazy"></article>
-      <article class="dog-story" id="harvard-yale"><div class="story-copy"><p class="small-label">My two brothers</p><h3>Harvard <em>&amp;</em> Yale.</h3><p>Harvard is the lively one.<br>Yale is the easygoing one.</p></div><div class="dog-portrait"><img src="../assets/life-huskies.svg?v=00993a4272" width="800" height="580" alt="An illustration of two huskies; Harvard and Yale are my dogs." loading="lazy"></div><details class="dog-story-detail"><summary>About those names <span aria-hidden="true">+</span></summary><div class="details-body"><p>I joke that I’m not applying to Harvard or Yale University to keep my relationship with these two intact.</p></div></details></article>
+      <article class="cycling-story"><div class="story-copy"><p class="small-label">Cycling in Beijing</p><h3>A ride to Tiananmen.<br>Or up a mountain.</h3><p>Those are some of my favorite ways to spend a day. I haven’t kept up cycling in the U.S., and I miss it.</p></div><div class="cycling-photos"><figure class=""><a href="../assets/photos/cycling-beijing.jpg" data-photo data-caption="Cycling in Beijing"><img src="../assets/photos/cycling-beijing.jpg" alt="Cycling in Beijing" width="1024" height="768" loading="lazy" decoding="async"></a><figcaption>Cycling in Beijing</figcaption></figure><figure class=""><a href="../assets/photos/cycling-bike.jpg" data-photo data-caption="My bike"><img src="../assets/photos/cycling-bike.jpg" alt="My road bike and cycling computer" width="768" height="1024" loading="lazy" decoding="async"></a><figcaption>My bike</figcaption></figure></div></article>
+      <article class="dog-story" id="harvard-yale"><div class="story-copy"><p class="small-label">My two brothers</p><h3>Harvard <em>&amp;</em> Yale.</h3><p>Harvard is the lively one.<br>Yale is the easygoing one.</p></div><div class="dog-photos"><figure class=""><a href="../assets/photos/harvard.jpg" data-photo data-caption="Harvard"><img src="../assets/photos/harvard.jpg" alt="Harvard wearing thin-framed glasses" width="768" height="1024" loading="lazy" decoding="async"></a><figcaption>Harvard</figcaption></figure><figure class=""><a href="../assets/photos/yale.jpg" data-photo data-caption="Yale"><img src="../assets/photos/yale.jpg" alt="Yale wearing green glasses" width="768" height="1024" loading="lazy" decoding="async"></a><figcaption>Yale</figcaption></figure></div><details class="dog-album"><summary>More photos <span aria-hidden="true">+</span></summary><div class="dog-snapshots"><figure class=""><a href="../assets/photos/huskies-puppies.jpeg" data-photo data-caption="As puppies"><img src="../assets/photos/huskies-puppies.jpeg" alt="The two huskies as puppies" width="768" height="1024" loading="lazy" decoding="async"></a><figcaption>As puppies</figcaption></figure><figure class=""><a href="../assets/photos/husky-helmet-side.jpeg" data-photo data-caption="Trying the helmet"><img src="../assets/photos/husky-helmet-side.jpeg" alt="A husky wearing a cycling helmet, seen from the side" width="768" height="1024" loading="lazy" decoding="async"></a><figcaption>Trying the helmet</figcaption></figure><figure class=""><a href="../assets/photos/husky-helmet-front.jpeg" data-photo data-caption="One more"><img src="../assets/photos/husky-helmet-front.jpeg" alt="A husky wearing a cycling helmet, seen from the front" width="768" height="1024" loading="lazy" decoding="async"></a><figcaption>One more</figcaption></figure></div></details><details class="dog-story-detail"><summary>About those names <span aria-hidden="true">+</span></summary><div class="details-body"><p>I joke that I’m not applying to Harvard or Yale University to keep my relationship with these two intact.</p></div></details></article>
     </div>
     <div class="sports-row"><div><p class="small-label">These days</p><h3>Tennis &amp; badminton.</h3></div><p>I grew up playing basketball, swimming, and practicing taekwondo. I was also on my school’s flag football team. At Georgia Tech, I’ve gravitated toward racket sports.</p><div class="racket-mark" aria-hidden="true"><svg viewBox="0 0 130 130" fill="none"><ellipse cx="72" cy="46" rx="26" ry="36" transform="rotate(35 72 46)" stroke="currentColor" stroke-width="2"/><path d="M52 69 24 110m23-36 8 6M49 30l38 26M43 42l37 26M54 18l39 27M64 15 44 57M79 20 53 67M91 31 68 74" stroke="currentColor" stroke-width="1"/><circle cx="104" cy="96" r="12" stroke="currentColor" stroke-width="2"/><path d="M94 89q12 7 17 13" stroke="currentColor"/></svg></div></div>
+<div class="sports-photos"><figure class=""><a href="../assets/photos/tennis-racket.jpg" data-photo data-caption="Tennis"><img src="../assets/photos/tennis-racket.jpg" alt="A tennis racket on the court" width="768" height="1024" loading="lazy" decoding="async"></a><figcaption>Tennis</figcaption></figure><figure class=""><a href="../assets/photos/tennis-court.jpg" data-photo data-caption="Evening on court"><img src="../assets/photos/tennis-court.jpg" alt="A tennis court in the evening" width="768" height="1024" loading="lazy" decoding="async"></a><figcaption>Evening on court</figcaption></figure><figure class=""><a href="../assets/photos/badminton.jpg" data-photo data-caption="Badminton"><img src="../assets/photos/badminton.jpg" alt="Three badminton rackets on court" width="1536" height="2048" loading="lazy" decoding="async"></a><figcaption>Badminton</figcaption></figure></div>
     <p class="games-note">And when I’m playing something on a screen: <span>CS:GO</span> or <span>Civilization VI.</span></p>
+  </section>
+
+
+  <section class="travel section-wrap" id="travel" aria-labelledby="travel-title">
+    <div class="section-heading"><h2 id="travel-title">Travel<span>.</span></h2><p>I also love traveling.</p></div>
+    <div class="travel-history">
+      <div><p class="small-label">Growing up</p><p class="destinations"><span>The Netherlands, </span><span>Germany, </span><span>Belgium, </span><span>Japan, </span><span>Singapore</span></p></div>
+      <div><p class="small-label">While studying in the U.S.</p><p class="destinations"><span>New York, </span><span>Los Angeles, </span><span>Tampa, </span><span>Miami, </span><span>Orlando, </span><span>the Great Smoky Mountains</span></p></div>
+    </div>
   </section>
 
   <section class="about section-wrap" id="about" aria-labelledby="about-title">
