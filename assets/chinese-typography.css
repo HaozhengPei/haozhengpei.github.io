@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'Noto Sans SC Web';
-  src: url('fonts/noto-sans-sc-site.woff2?v=71ca4dcef0') format('woff2');
+  src: url('fonts/noto-sans-sc-site.woff2?v=be841d9b24') format('woff2');
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
 }
 @font-face {
   font-family: 'Noto Serif SC Web';
-  src: url('fonts/noto-serif-sc-site.woff2?v=3c5485f145') format('woff2');
+  src: url('fonts/noto-serif-sc-site.woff2?v=68d5b74835') format('woff2');
   font-style: normal;
   font-weight: 200 900;
   font-display: swap;
