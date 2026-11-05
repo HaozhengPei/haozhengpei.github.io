@@ -56,10 +56,26 @@ html[lang="zh-CN"]{--sans:Manrope,'PingFang SC','Microsoft YaHei','Noto Sans CJK
 @media print{.paper-evidence{display:block!important}.published-project,.forecasting-summary{display:block}.forecasting-summary p,.current-project p{color:#222!important}.hero{padding-top:10px}.hero-research{color:#222}.paper-evidence{max-width:440px}.published-project{margin-top:25px}}
 
 /* A cycling photo essay: two lead frames, a candid, then older rides. */
-.cycling-story.cycling-event{display:block}.cycling-heading{display:flex;align-items:baseline;justify-content:space-between;gap:25px;margin-bottom:30px}.cycling-heading h3{font-size:34px;letter-spacing:-.035em;line-height:1.3}.cycling-heading>p{color:#aebbc6;font-size:12px}.cycling-feature-pair{display:grid;grid-template-columns:2fr 1fr;gap:28px;align-items:start}.cycling-feature-pair figure,.cycling-second-row figure{min-width:0}.cycling-event a[data-photo]{display:block;overflow:hidden;border-radius:2px}.cycling-event img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}.cycling-second-row{display:grid;grid-template-columns:1.45fr 1fr;gap:64px;align-items:center;margin:35px 0 0 7%}.cycling-second-row .story-copy{padding:0;grid-column:auto;grid-row:auto;margin:0}.cycling-second-row .story-copy>p{font-size:14px;line-height:1.9;color:#aebbc6;max-width:340px}.cycling-album{margin:30px 0 0 7%;max-width:650px}.cycling-album summary{font-size:12px;color:#aebdc9}.cycling-archive{display:grid;grid-template-columns:1.8fr .7fr;gap:28px;align-items:start;margin-top:24px}.cycling-archive figure{min-width:0}.cycling-archive figcaption{font-size:11px;color:#a0aebb;margin-top:10px}.research-affiliation{align-items:center}.research-affiliation .current-project-copy{color:#c0cbd3}.research-affiliation .project-date{margin-top:13px}.research-affiliation h3{margin-top:10px}
-@media(max-width:1100px){.cycling-feature-pair{gap:22px}.cycling-second-row{gap:35px;margin-left:4%}.cycling-album{margin-left:4%}}
-@media(max-width:760px){.cycling-heading{align-items:flex-start;flex-direction:column;gap:10px;margin-bottom:24px}.cycling-heading h3{font-size:30px}.cycling-heading>p{font-size:12px}.cycling-feature-pair{grid-template-columns:1fr;gap:25px}.cycling-event-portrait{width:70%;max-width:300px;justify-self:end}.cycling-second-row{grid-template-columns:1fr;gap:24px;margin:28px 0 0}.cycling-second-row .story-copy>p{max-width:450px;font-size:14px}.cycling-album{margin:24px 0 0}.cycling-archive{gap:20px;grid-template-columns:1.5fr 1fr}.cycling-archive figcaption{font-size:10px}.research-affiliation{gap:20px}}
-@media print{.cycling-feature-pair,.cycling-second-row figure,.cycling-album{display:none}.cycling-second-row{display:block;margin:0}.cycling-heading{display:block}.cycling-heading>p,.cycling-second-row .story-copy>p{color:#222}}
+/* Cycling is a compact personal album within the life section. */
+.cycling-story.cycling-event{display:grid;grid-template-columns:minmax(210px,.85fr) minmax(0,1.65fr);gap:44px;align-items:center}
+.cycling-intro h3{font-size:28px;letter-spacing:-.035em;line-height:1.3;margin-bottom:17px}
+.cycling-intro>p{font-size:14px;line-height:1.9;color:#aebbc6;max-width:340px}
+.cycling-gallery{width:100%;max-width:660px;justify-self:end;min-width:0}
+.cycling-photo-strip{display:grid;grid-template-columns:2fr 1fr 2fr;gap:12px;align-items:center}
+.cycling-photo-strip figure{min-width:0}
+.cycling-event a[data-photo]{display:block;overflow:hidden;border-radius:2px}
+.cycling-event img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
+.cycling-caption{color:#8f9eab;font-size:10px;line-height:1.7;margin-top:11px}
+.cycling-album{margin-top:17px}
+.cycling-album summary{font-size:11px;color:#aebdc9}
+.cycling-archive{display:grid;grid-template-columns:1.8fr .7fr;gap:20px;align-items:start;margin-top:20px;max-width:480px}
+.cycling-archive figure{min-width:0}
+.cycling-archive figcaption{font-size:10px;color:#a0aebb;margin-top:8px}
+@media(max-width:1100px){.cycling-story.cycling-event{gap:30px;grid-template-columns:minmax(200px,.85fr) minmax(0,1.4fr)}}
+@media(max-width:760px){.cycling-story.cycling-event{grid-template-columns:1fr;gap:24px}.cycling-intro h3{font-size:26px;margin-bottom:13px}.cycling-intro>p{font-size:13px;max-width:450px}.cycling-gallery{justify-self:start;max-width:460px}.cycling-photo-strip{grid-template-columns:2fr 1fr 2fr;gap:9px}.cycling-caption{margin-top:9px}.cycling-album{margin-top:15px}}
+@media(max-width:480px){.cycling-gallery{max-width:320px}.cycling-photo-strip{grid-template-columns:1fr 2fr;gap:11px;align-items:center}.cycling-event-portrait{grid-column:1;grid-row:1/3}.cycling-action{grid-column:2;grid-row:1}.cycling-candid{grid-column:2;grid-row:2}}
+@media print{.cycling-gallery{display:none}.cycling-story.cycling-event{display:block}.cycling-intro>p{color:#222}}
+
 
 #mode-recall .paper-authors{font-size:13px;line-height:1.8;color:#bdcbd7;margin:0 0 3px}
 #mode-recall .paper-authors strong{font-weight:700;color:#e0e7ec}
