@@ -11,6 +11,7 @@
   const button = document.getElementById('motion-toggle');
   const symbol = button?.querySelector('.motion-symbol');
   const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const chinese = document.documentElement.lang.startsWith('zh');
   const FRAME_INTERVAL = 1000 / 60;
   let width = 0, height = 0, elapsed = 0;
   let playing = !preference.matches;
@@ -18,7 +19,7 @@
   let compact = false;
 
   function controls() {
-    button?.setAttribute('aria-label', playing ? 'Pause background animation' : 'Play background animation');
+    button?.setAttribute('aria-label', chinese ? (playing ? '暂停背景动画' : '播放背景动画') : (playing ? 'Pause background animation' : 'Play background animation'));
     button?.removeAttribute('aria-pressed');
     if (symbol) symbol.textContent = playing ? 'Ⅱ' : '▷';
   }

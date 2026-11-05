@@ -18,7 +18,7 @@
         entry.target.classList.remove('is-pending'); observer.unobserve(entry.target);
       }
     }, { threshold: .04 });
-    document.querySelectorAll('.section-heading, .lead-project, .project, .personal-note, .life-grid, .sports-row, .background-grid').forEach(element => {
+    document.querySelectorAll('.section-heading, .lead-project, .current-project, .project, .personal-note, .life-grid, .sports-row, .background-grid').forEach(element => {
       element.classList.add('reveal', 'is-pending'); observer.observe(element);
     });
     motion.addEventListener('change', () => {

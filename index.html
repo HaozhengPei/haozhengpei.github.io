@@ -7,16 +7,20 @@
   <meta property="og:title" content="Haozheng Pei"><meta property="og:description" content="Research, a few things I love, and two brothers named Harvard and Yale."><meta property="og:type" content="website">
   <title>Haozheng Pei</title>
   <link rel="canonical" href="https://haozhengpei.github.io/">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" hreflang="en" href="https://haozhengpei.github.io/">
+  <link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/">
+  <link rel="icon" href="assets/favicon.svg?v=9bde83f793" type="image/svg+xml">
   <link rel="preload" href="assets/Manrope-Regular.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="expressive/styles.css?v=f9ecee8769">
-  <script src="expressive/site.js?v=8c1f73fc4b" defer></script><script src="expressive/hero.js?v=de7e76ba1e" defer></script>
+  <link rel="stylesheet" href="expressive/styles.css?v=8d5cba7f28">
+  <script src="expressive/site.js?v=37a07d27ac" defer></script><script src="expressive/hero.js?v=54f05e9cb5" defer></script>
+  <script src="language.js?v=802c5b58a4" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <a class="wordmark" href="#home" aria-label="Haozheng Pei, home">HP<span>✦</span></a>
   <nav aria-label="Main navigation"><a href="#research">Research</a><a href="#life">Life</a><a href="#about">About</a></nav>
+  <a class="language-switch" href="zh/index.html" lang="zh-CN" hreflang="zh-CN" aria-label="切换为中文">中文</a>
   <a class="academic-switch" href="academic/index.html">Academic version <span aria-hidden="true">↗</span></a>
 </header>
 <main id="main">
@@ -32,18 +36,22 @@
       <div class="hero-art" id="hero-art"><img id="hero-fallback" src="assets/ambient-poster.svg?v=1871c17252" alt=""><canvas id="hero-canvas"></canvas></div>
     </div>
     <button type="button" class="ambient-toggle" id="motion-toggle" aria-label="Pause background animation" hidden><span class="motion-symbol" aria-hidden="true">Ⅱ</span></button>
-    <div class="hero-bottom"><span>Mathematics + Industrial &amp; Systems Engineering</span><div><a href="assets/Haozheng_Pei_CV.pdf">CV ↗</a><a href="https://www.linkedin.com/in/haozheng-pei/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:hpei8@gatech.edu">Email ↗</a></div></div>
+    <div class="hero-bottom"><span>Mathematics + Industrial &amp; Systems Engineering</span><div><a href="assets/Haozheng_Pei_CV.pdf?v=4b8e8d3b93">CV ↗</a><a href="https://www.linkedin.com/in/haozheng-pei/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:hpei8@gatech.edu">Email ↗</a></div></div>
   </section>
 
   <section class="research section-wrap" id="research" aria-labelledby="research-title">
     <div class="section-heading"><h2 id="research-title">Research<span>.</span></h2><p>Generative models, probability,<br>and what we can learn from finite samples.</p></div>
     <article class="lead-project" id="mode-recall">
       <div class="lead-copy"><p class="project-meta">First author <span>·</span> ICLR 2027, under review</p><h3>Certified Mode-Recall<br>for Generative Models</h3><p>I developed a finite-sample framework to certify modes as present, absent, or inconclusive—even with imperfect classifier labels.</p><details><summary>Read about the work <span aria-hidden="true">+</span></summary><div class="details-body"><p>I proved labeller-conditional validity and consistency, with sample-complexity bounds for rare modes. Experiments evaluate GANs, flow matching, and pretrained diffusion models on StackedMNIST, CIFAR-10, and CelebA subgroups.</p></div></details><p class="project-date">May 2026 — Present</p></div>
-      <figure class="mode-art"><img src="assets/mode-recall-night.svg" alt="Schematic of mode-level certification: present, absent, or inconclusive." width="640" height="480" loading="lazy"></figure>
+      <figure class="mode-art"><img src="assets/mode-recall-night.svg?v=7e030d24f4" alt="Schematic of mode-level certification: present, absent, or inconclusive." width="640" height="480" loading="lazy"></figure>
+    </article>
+    <article class="current-project" id="world-models">
+      <div class="current-project-heading"><p class="project-meta">RobotGen Studio · Research Assistant</p><h3>World models<br>for robot learning</h3><p class="project-date">October 2026 — Present<br>Prof. Bo Zhu’s group · Georgia Tech</p></div>
+      <div class="current-project-copy"><p>RobotGen Studio explores building simulation environments from real-world images and videos to generate robot tasks, demonstrations, and training data for vision-language-action models.</p><p>I contribute to literature review and design discussions on persistent memory and self-improvement, and explore demonstration generation that combines code agents with complex physical simulation. The project is in prototype development.</p></div>
     </article>
     <div class="supporting-projects">
       <article class="project" id="object-sounds"><a class="project-image paper-image" href="https://clink-chop-thud.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Clink! Chop! Thud! project"><img src="assets/clink-teaser.png" alt="Published project figure showing objects and their interaction sounds." loading="lazy"><span aria-hidden="true">↗</span></a><div class="project-copy"><p class="project-meta">ICCV 2025 <span>·</span> Third author</p><h3>Clink! Chop! Thud!</h3><p class="project-subtitle">Learning Object Sounds from Real-World Interactions</p><p>I contributed annotation and feature pipelines, evaluation, and ablations for learning which object produces a sound in egocentric video.</p><div class="project-links"><a href="https://openaccess.thecvf.com/content/ICCV2025/html/Yang_Clink_Chop_Thud_-_Learning_Object_Sounds_from_Real-World_Interactions_ICCV_2025_paper.html" target="_blank" rel="noopener noreferrer">Paper ↗</a><a href="https://clink-chop-thud.github.io/" target="_blank" rel="noopener noreferrer">Project ↗</a><a href="https://github.com/mengyu-yang/clink-chop-thud" target="_blank" rel="noopener noreferrer">Code ↗</a></div></div></article>
-      <article class="project" id="forecasting"><div class="project-image forecast-image"><img src="assets/forecast-night.svg" alt="Illustrative forecast curve with an uncertainty band." width="640" height="480" loading="lazy"></div><div class="project-copy"><p class="project-meta">Georgia Tech <span>·</span> Aug 2025 — Aug 2026</p><h3>Forecasting renewable energy</h3><p class="project-subtitle">Wind generation and power markets</p><p>I developed probabilistic wind and solar forecasts with domain-informed deep models, connecting generation uncertainty to dispatch and power-market decisions.</p><details><summary>Methods <span aria-hidden="true">+</span></summary><div class="details-body"><p>Transformer/DKFormer models, ARIMA and SVM baselines, spatiotemporal features, ensemble learning, and Bayesian model combination.</p></div></details></div></article>
+      <article class="project" id="forecasting"><div class="project-image forecast-image"><img src="assets/forecast-night.svg?v=8bbffd1326" alt="Illustrative forecast curve with an uncertainty band." width="640" height="480" loading="lazy"></div><div class="project-copy"><p class="project-meta">Georgia Tech <span>·</span> Aug 2025 — Aug 2026</p><h3>Forecasting renewable energy</h3><p class="project-subtitle">Wind generation and power markets</p><p>I developed probabilistic wind and solar forecasts with domain-informed deep models, connecting generation uncertainty to dispatch and power-market decisions.</p><details><summary>Methods <span aria-hidden="true">+</span></summary><div class="details-body"><p>Transformer/DKFormer models, ARIMA and SVM baselines, spatiotemporal features, ensemble learning, and Bayesian model combination.</p></div></details></div></article>
     </div>
   </section>
 
@@ -51,16 +59,16 @@
     <div class="section-heading"><h2 id="life-title">Life<span>.</span></h2></div>
     <div class="personal-note"><span class="note-star" aria-hidden="true">✳</span><p>I’m an optimist. Cycling was my first real lesson in persistence. I’ve wanted to do research for a long time, and I want to keep doing it—whether in academia or industry.</p></div>
     <div class="life-grid">
-      <article class="cycling-story"><div class="story-copy"><p class="small-label">Cycling in Beijing</p><h3>A ride to Tiananmen.<br>Or up a mountain.</h3><p>Those are some of my favorite ways to spend a day. I haven’t kept up cycling in the U.S., and I miss it.</p></div><img src="assets/cycling-night.svg" width="720" height="380" alt="Illustration of a road winding through mountains at dusk." loading="lazy"></article>
-      <article class="dog-story" id="harvard-yale"><div class="story-copy"><p class="small-label">My two brothers</p><h3>Harvard <em>&amp;</em> Yale.</h3><p>Harvard is the lively one.<br>Yale is the easygoing one.</p></div><div class="dog-portrait"><img src="assets/life-huskies.svg" width="800" height="580" alt="An illustration of two huskies; Harvard and Yale are my dogs." loading="lazy"></div><details class="dog-story-detail"><summary>About those names <span aria-hidden="true">+</span></summary><div class="details-body"><p>I joke that I’m not applying to Harvard or Yale University to keep my relationship with these two intact.</p></div></details></article>
+      <article class="cycling-story"><div class="story-copy"><p class="small-label">Cycling in Beijing</p><h3>A ride to Tiananmen.<br>Or up a mountain.</h3><p>Those are some of my favorite ways to spend a day. I haven’t kept up cycling in the U.S., and I miss it.</p></div><img src="assets/cycling-night.svg?v=157e70e885" width="720" height="380" alt="Illustration of a road winding through mountains at dusk." loading="lazy"></article>
+      <article class="dog-story" id="harvard-yale"><div class="story-copy"><p class="small-label">My two brothers</p><h3>Harvard <em>&amp;</em> Yale.</h3><p>Harvard is the lively one.<br>Yale is the easygoing one.</p></div><div class="dog-portrait"><img src="assets/life-huskies.svg?v=00993a4272" width="800" height="580" alt="An illustration of two huskies; Harvard and Yale are my dogs." loading="lazy"></div><details class="dog-story-detail"><summary>About those names <span aria-hidden="true">+</span></summary><div class="details-body"><p>I joke that I’m not applying to Harvard or Yale University to keep my relationship with these two intact.</p></div></details></article>
     </div>
     <div class="sports-row"><div><p class="small-label">These days</p><h3>Tennis &amp; badminton.</h3></div><p>I grew up playing basketball, swimming, and practicing taekwondo. I was also on my school’s flag football team. At Georgia Tech, I’ve gravitated toward racket sports.</p><div class="racket-mark" aria-hidden="true"><svg viewBox="0 0 130 130" fill="none"><ellipse cx="72" cy="46" rx="26" ry="36" transform="rotate(35 72 46)" stroke="currentColor" stroke-width="2"/><path d="M52 69 24 110m23-36 8 6M49 30l38 26M43 42l37 26M54 18l39 27M64 15 44 57M79 20 53 67M91 31 68 74" stroke="currentColor" stroke-width="1"/><circle cx="104" cy="96" r="12" stroke="currentColor" stroke-width="2"/><path d="M94 89q12 7 17 13" stroke="currentColor"/></svg></div></div>
     <p class="games-note">And when I’m playing something on a screen: <span>CS:GO</span> or <span>Civilization VI.</span></p>
   </section>
 
   <section class="about section-wrap" id="about" aria-labelledby="about-title">
-    <div class="section-heading"><h2 id="about-title">Background<span>.</span></h2><a class="inline-link" href="assets/Haozheng_Pei_CV.pdf">Full CV <span aria-hidden="true">↗</span></a></div>
-    <div class="background-grid"><div><p class="small-label">Education</p><h3>Georgia Institute<br>of Technology</h3><p>B.S. Mathematics<br>B.S. Industrial and Systems Engineering</p><p class="muted">Expected May 2028 · GPA 3.77 / 4.00<br>Artificial Intelligence and Operations Research</p></div><div><p class="small-label">Teaching</p><h3>Basic Statistical Methods</h3><p>Undergraduate Teaching Assistant<br>ISyE 3030 · Georgia Tech</p><p class="muted">August 2025 — Present<br>Supporting a class of 70+ students.</p></div></div>
+    <div class="section-heading"><h2 id="about-title">Background<span>.</span></h2><a class="inline-link" href="assets/Haozheng_Pei_CV.pdf?v=4b8e8d3b93">Full CV <span aria-hidden="true">↗</span></a></div>
+    <div class="background-grid"><div><p class="small-label">Education</p><h3>Georgia Institute<br>of Technology</h3><p>B.S. Mathematics<br>B.S. Industrial and Systems Engineering</p><p class="muted">Expected July 2027 · GPA 3.77 / 4.00<br>Artificial Intelligence and Operations Research</p></div><div><p class="small-label">Teaching</p><h3>Undergraduate teaching</h3><p>Georgia Tech<br>Including ISyE 3030: Basic Statistical Methods</p><p class="muted">August 2025 — Present<br>100+ students across five semesters.</p></div></div>
     <div class="experience-list"><div class="experience-label">Previously</div><article><span class="date">May — Aug 2026</span><h3>UnionPay Advisors</h3><p>Data Science Intern · Shanghai</p><p class="muted">Credit-default modeling, feature engineering, and stability analysis.</p></article><article><span class="date">Feb — Apr 2025</span><h3>Hyde Park Investment Service</h3><p>Quantitative Research Intern · New York</p><p class="muted">News sentiment and macroeconomic data for gold-price forecasting.</p></article></div>
     <div class="about-bottom"><p>Python, C++, Java, R · PyTorch, NumPy, SciPy, Pandas · LaTeX, Git</p><a href="academic/index.html">More research and background <span aria-hidden="true">↗</span></a></div>
   </section>

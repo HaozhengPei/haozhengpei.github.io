@@ -11,3 +11,10 @@
 @media(max-width:760px){.personal-note{grid-template-columns:125px minmax(0,1fr);gap:23px}.personal-mark{width:125px}.personal-copy p{font-size:13px}.personal-copy .personal-interests{font-size:19px}}
 @media(max-width:520px){.personal-note{grid-template-columns:1fr;gap:15px}.personal-mark{width:135px;margin-top:-8px}.intro-personal{font-size:12px}.intro-personal a{margin-left:0}.personal-copy .personal-interests{font-size:19px}}
 @media print{.personal-mark{display:none}.personal-note{display:block}.intro-personal,.personal-copy p{font-size:9pt}.personal-copy .personal-interests{font-size:12pt}}
+
+.language-switch{display:inline-flex;align-items:center;justify-content:center;min-height:36px;min-width:44px;padding:5px 10px;border:1px solid #a8b7c3;font-size:12px;white-space:nowrap;color:var(--ink);order:2;margin-left:20px}.language-switch:hover{background:#e6edf2;text-decoration:none}.site-header .wordmark{order:0}.site-header nav{order:1;margin-left:auto;gap:22px}.menu-toggle{order:3}
+html[lang="zh-CN"]{--sans:'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif;--serif:'Songti SC','Noto Serif CJK SC',Georgia,serif}html[lang="zh-CN"] h1,html[lang="zh-CN"] h2,html[lang="zh-CN"] h3,html[lang="zh-CN"] h4{letter-spacing:.01em}html[lang="zh-CN"] h1{letter-spacing:.07em}html[lang="zh-CN"] .intro-body,html[lang="zh-CN"] .section-content p{line-height:1.9}html[lang="zh-CN"] .eyebrow,html[lang="zh-CN"] .margin-label{letter-spacing:.08em}
+@media(max-width:1100px){.site-header nav{gap:15px}.site-header nav a[href="#outside"],.site-header nav a[href="#contact"]{display:none}.language-switch{margin-left:15px}}
+@media(max-width:760px){.site-header nav{order:4;margin-left:0;width:100%}.language-switch{margin-left:auto}.site-header nav a[href="#outside"],.site-header nav a[href="#contact"]{display:inline-flex}}
+@media(max-width:520px){.language-switch{font-size:11px;padding:5px 9px}.site-header{column-gap:20px}html[lang="zh-CN"] h1{font-size:52px}}
+@media print{.language-switch{display:none}}
