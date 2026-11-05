@@ -1,144 +1,81 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101d23">
-  <meta name="description" content="Haozheng Pei — Georgia Tech, generative models, and probability. Outside research: badminton, tennis, cycling, and life with two huskies.">
-  <meta property="og:title" content="Haozheng Pei — Research & life">
-  <meta property="og:description" content="Generative models and probability at Georgia Tech. Badminton, tennis, cycling, and two huskies away from the desk.">
-  <meta property="og:type" content="website">
-  <title>Haozheng Pei — Research & life</title>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090c12">
+  <meta name="description" content="Haozheng Pei. Flow matching, diffusion, and world models at Georgia Tech. Tennis, badminton, cycling, and two huskies named Harvard and Yale.">
+  <meta property="og:title" content="Haozheng Pei"><meta property="og:description" content="Research, a few things I love, and two brothers named Harvard and Yale."><meta property="og:type" content="website">
+  <title>Haozheng Pei</title>
+  <link rel="canonical" href="https://haozhengpei.github.io/">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/Manrope-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="personal.css">
-  <script src="script.js" defer></script>
-  <script src="personal.js" defer></script>
+  <script src="site.js" defer></script><script src="hero.js" defer></script>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header class="site-header">
-    <a class="wordmark" href="#home" aria-label="Haozheng Pei, home">hp<span class="wordmark-dot">.</span></a>
-    <nav aria-label="Main navigation">
-      <a href="#research">Research</a><a href="#life">Life</a><a href="#about">About</a><a href="#contact">Contact</a>
-      <a class="nav-cv" href="../assets/Haozheng_Pei_CV.pdf">CV <span aria-hidden="true">↗</span></a>
-    </nav>
-  </header>
-  <main id="main">
-    <section class="hero" id="home" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> Georgia Institute of Technology</p>
-        <h1 id="hero-title">Haozheng<br><em>Pei.</em></h1>
-        <p class="hero-intro">I study generative models<br>and the probability behind them.</p>
-        <p class="hero-bio">Mathematics &amp; Industrial and Systems Engineering at Georgia Tech. Interested in what models generate, what they miss, and what we can guarantee.</p>
-        <p class="hero-personal">Also: rackets, bike rides, and <a href="#life">two huskies.</a></p>
-        <div class="hero-links"><a class="button button-light" href="#research">Explore research <span aria-hidden="true">↘</span></a><a class="text-link" href="../assets/Haozheng_Pei_CV.pdf">Download CV <span aria-hidden="true">↗</span></a></div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="wordmark" href="#home" aria-label="Haozheng Pei, home">HP<span>✦</span></a>
+  <nav aria-label="Main navigation"><a href="#research">Research</a><a href="#life">Life</a><a href="#about">About</a></nav>
+  <a class="academic-switch" href="../academic/index.html">Academic version <span aria-hidden="true">↗</span></a>
+</header>
+<main id="main">
+  <section class="hero" id="home" aria-labelledby="name">
+    <div class="hero-orbit" aria-hidden="true"></div>
+    <div class="hero-copy">
+      <p class="hello">Hi, I’m</p>
+      <h1 id="name">Haozheng Pei</h1>
+      <p class="hero-intro">I’m an undergraduate at Georgia Tech working on <strong>flow matching, diffusion, and world models.</strong></p>
+      <p class="hero-personal">Usually optimistic. Often on a court.<br>Brother to two huskies, <a href="#harvard-yale">Harvard and Yale.</a></p>
+      <a class="hero-cta" href="#research">My research <span aria-hidden="true">↘</span></a>
+    </div>
+    <figure class="research-visual" aria-label="Interactive research illustrations">
+      <div class="research-modes" role="group" aria-label="Research visualization" hidden>
+        <button type="button" data-research-mode="flow" aria-pressed="true">Flow matching</button>
+        <button type="button" data-research-mode="diffusion" aria-pressed="false">Diffusion</button>
+        <button type="button" data-research-mode="world" aria-pressed="false">World models</button>
       </div>
-      <figure class="flow-figure">
-        <div class="flow-stage">
-          <img class="flow-fallback" src="../assets/flow-poster.svg" alt="An abstract field of points forming six curved clusters.">
-          <canvas id="flow-canvas" aria-label="Illustration of points moving from a diffuse cloud into structured clusters"></canvas>
-          <span class="formula formula-one" aria-hidden="true">x ∼ p<sub>t</sub>(x)</span>
-          <span class="formula formula-two" aria-hidden="true">t ∈ [0, 1]</span>
-          <div class="flow-axis" aria-hidden="true"><span>Probability</span><i></i><span>Structure</span></div>
-        </div>
-        <figcaption>
-          <div class="figure-heading"><span>From noise to structure</span><span class="figure-index">01 — Illustration</span></div>
-          <div class="flow-controls" hidden>
-            <button id="motion-toggle" type="button" aria-label="Pause animation"><span class="motion-symbol" aria-hidden="true">Ⅱ</span><span class="motion-label">Pause</span></button>
-            <label class="sr-only" for="flow-progress">Transformation progress</label>
-            <input type="range" id="flow-progress" min="0" max="100" value="50" aria-valuetext="50 percent transformed">
-            <output id="flow-value" for="flow-progress" aria-live="off">t = 0.50</output>
-          </div>
-        </figcaption>
-      </figure>
-      <div class="hero-bottom"><span>Research · Sport · Life with two huskies</span><a href="#life" aria-label="Explore life outside research">Outside research <span aria-hidden="true">↓</span></a></div>
-    </section>
-
-    <section class="research section-light" id="research" aria-labelledby="research-title">
-      <div class="section-heading reveal"><p class="eyebrow dark-eyebrow">01 / Research</p><h2 id="research-title">Selected<br><em>research.</em></h2><p>My work spans generative model evaluation, audiovisual learning, and probabilistic forecasting.</p></div>
-      <article class="research-entry reveal" id="mode-recall">
-        <div class="research-visual mode-visual">
-          <img src="../assets/mode-recall.svg" alt="Conceptual diagram of nine generative modes with present, absent, and inconclusive outcomes." width="640" height="480" loading="lazy">
-          <span class="visual-caption">Finite samples. Three possible conclusions.</span>
-        </div>
-        <div class="research-copy"><div class="entry-meta"><span>Generative modeling</span><span>May 2026 — Present</span></div>
-          <h3>Certified Mode-Recall<br>for Generative Models</h3>
-          <p class="venue"><span class="status-dot" aria-hidden="true"></span>ICLR 2027 · Under review · First author</p>
-          <p>What does a generator leave out? I developed a finite-sample framework that certifies modes as present, absent, or inconclusive, while accounting for imperfect classifier labels.</p>
-          <details><summary>Research details <span aria-hidden="true">+</span></summary><div class="details-body"><p>The framework provides labeller-conditional validity and consistency guarantees, with sample-complexity bounds for rare modes. I evaluated GANs, flow matching, and pretrained DDPMs on StackedMNIST, CIFAR-10, and CelebA subgroups.</p><p>The experiments examine how apparent sample quality can mask missing modes and subgroup coverage gaps.</p></div></details>
-          <div class="topics"><span>Finite-sample bounds</span><span>Diffusion &amp; flow matching</span></div>
-        </div>
-      </article>
-      <article class="research-entry reverse reveal" id="object-sounds">
-        <div class="research-visual sound-visual"><img src="../assets/object-sounds.svg" alt="Conceptual illustration linking the sound waveform of an interaction to its sounding object in a video frame." width="640" height="480" loading="lazy"><span class="visual-caption">Connecting what we hear with what we see.</span></div>
-        <div class="research-copy"><div class="entry-meta"><span>Audiovisual learning</span><span>Sep 2024 — Mar 2025</span></div>
-          <h3>Clink! Chop! Thud!</h3><p class="project-subtitle">Learning Object Sounds from<br>Real-World Interactions</p>
-          <p class="venue"><span class="status-dot" aria-hidden="true"></span>ICCV 2025 · Third author</p>
-          <p>Learning which object produces a sound in egocentric video. I contributed annotation and feature pipelines, evaluation, and ablations for an object-aware audiovisual framework.</p>
-          <div class="paper-links"><a href="https://openaccess.thecvf.com/content/ICCV2025/html/Yang_Clink_Chop_Thud_-_Learning_Object_Sounds_from_Real-World_Interactions_ICCV_2025_paper.html" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a><a href="https://clink-chop-thud.github.io/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a><a href="https://github.com/mengyu-yang/clink-chop-thud" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a></div>
-          <details><summary>Research details <span aria-hidden="true">+</span></summary><div class="details-body"><p>The pipelines turn egocentric video into object-level supervision without manual labeling. Evaluation and ablations use EPIC-KITCHENS and Ego4D.</p><p class="authors">Mengyu Yang, Yiming Chen, <strong>Haozheng Pei</strong>, Siddhant Agarwal, Arun Balajee Vasudevan, James Hays.</p></div></details>
-          <div class="topics"><span>Object-aware learning</span><span>Egocentric video</span></div>
-        </div>
-      </article>
-      <article class="research-entry reveal" id="forecasting">
-        <div class="research-visual forecast-visual"><img src="../assets/forecast.svg" alt="Conceptual forecast curve with a widening uncertainty band, illustrating probabilistic power generation forecasts." width="640" height="480" loading="lazy"><span class="visual-caption">Forecasts with uncertainty in view.</span></div>
-        <div class="research-copy"><div class="entry-meta"><span>Probabilistic forecasting</span><span>Aug 2025 — Aug 2026</span></div>
-          <h3>Wind Generation<br>&amp; Power Markets</h3><p class="venue">Georgia Tech · Electric Power Market Research</p>
-          <p>Probabilistic wind and solar forecasts that connect generation uncertainty to power-market decisions. I worked on domain-knowledge-enhanced deep models and spatiotemporal features from turbine and weather data.</p>
-          <details><summary>Research details <span aria-hidden="true">+</span></summary><div class="details-body"><p>The work combines Transformer/DKFormer models with ARIMA and SVM baselines, ensemble learning, and Bayesian model combination. Forecast uncertainty is linked to imbalance pricing, dispatch, and price formation.</p></div></details>
-          <div class="topics"><span>Uncertainty quantification</span><span>Time series</span></div>
-        </div>
-      </article>
-    </section>
-
-    <section class="life" id="life" aria-labelledby="life-title">
-      <div class="life-heading reveal">
-        <div><p class="eyebrow dark-eyebrow">02 / Outside research</p><h2 id="life-title">Away from<br><em>the desk.</em></h2></div>
-        <p class="life-intro">I play badminton and tennis, enjoy cycling, and have two huskies.</p>
+      <div class="hero-art" id="hero-art"><img id="hero-fallback" src="../assets/research-poster.svg" alt="Illustration of a cloud of particles becoming an ordered surface."><canvas id="hero-canvas" role="img" aria-label="Conceptual illustration of smooth transport from noise to structure" aria-describedby="simulation-caption"></canvas></div>
+      <figcaption id="simulation-caption">Illustrative transport from noise to structure.</figcaption>
+      <div class="art-controls" hidden>
+        <button type="button" id="motion-toggle" aria-label="Pause animation"><span class="motion-symbol" aria-hidden="true">Ⅱ</span><span class="motion-label">Pause</span></button>
+        <label class="sr-only" for="shape-progress">Animation progress</label><input id="shape-progress" type="range" min="0" max="100" value="60" aria-label="Animation progress"><output id="flow-value" for="shape-progress" aria-live="off">t = 0.60</output>
       </div>
-      <div class="life-spread">
-        <article class="husky-story reveal" aria-labelledby="huskies-title">
-          <div class="husky-heading"><span>At home</span><h3 id="huskies-title">Life with<br>two huskies.</h3></div>
-          <figure class="husky-picture"><img src="../assets/life-huskies.svg" width="800" height="580" loading="lazy" alt="Illustration of two huskies sitting together."></figure>
-        </article>
-        <div class="off-duty reveal">
-          <div class="hobby-selector" role="group" aria-label="Explore my sports" hidden>
-            <button type="button" data-hobby="Badminton" aria-pressed="true" aria-controls="scene-badminton">Badminton</button>
-            <button type="button" data-hobby="Tennis" aria-pressed="false" aria-controls="scene-tennis">Tennis</button>
-            <button type="button" data-hobby="Cycling" aria-pressed="false" aria-controls="scene-cycling">Cycling</button>
-          </div>
-          <div class="hobby-stage">
-            <figure class="hobby-scene" id="scene-badminton"><img src="../assets/life-badminton.svg" width="640" height="450" loading="lazy" alt="Illustration of a badminton court with a shuttlecock."></figure>
-            <figure class="hobby-scene" id="scene-tennis" hidden><img src="../assets/life-tennis.svg" width="640" height="450" loading="lazy" alt="Illustration of a tennis court with a tennis ball."></figure>
-            <figure class="hobby-scene" id="scene-cycling" hidden><img src="../assets/life-cycling.svg" width="640" height="450" loading="lazy" alt="Illustration of a bicycle on a winding path."></figure>
-          </div>
-          <div class="hobby-caption"><span>On the court / On the road</span><span class="hobby-count" aria-live="polite">Badminton</span></div>
-          <div class="game-note"><span class="small-label">I also play</span><p>CS:GO <span>&amp;</span> Civilization VI</p></div>
-        </div>
-      </div>
-    </section>
+    </figure>
+    <div class="hero-bottom"><span>Mathematics + Industrial &amp; Systems Engineering</span><div><a href="../assets/Haozheng_Pei_CV.pdf">CV ↗</a><a href="https://www.linkedin.com/in/haozheng-pei/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:hpei8@gatech.edu">Email ↗</a></div></div>
+  </section>
 
-    <section class="about section-light" id="about" aria-labelledby="about-title">
-      <div class="about-heading reveal"><p class="eyebrow dark-eyebrow">03 / Background</p><h2 id="about-title">A foundation<br>in <em>mathematics.</em></h2></div>
-      <div class="about-content">
-        <div class="education reveal"><span class="small-label">Education</span><h3>Georgia Institute<br>of Technology</h3><p>B.S. Mathematics<br>B.S. Industrial and Systems Engineering</p><div class="education-meta"><span>Expected May 2028</span><span>GPA 3.77 / 4.00</span></div><p class="muted">Concentration in Artificial Intelligence and Operations Research.</p></div>
-        <div class="teaching reveal"><span class="small-label">Teaching</span><h3>Making statistics<br>make sense.</h3><p>Undergraduate Teaching Assistant<br>ISyE 3030 · Basic Statistical Methods</p><p class="muted">Georgia Tech · August 2025 — Present<br>Supporting a class of 70+ students.</p></div>
-        <div class="honors reveal"><span class="small-label">Honors</span><ul><li><span>Center for Finance and Technology Scholar</span><small>One of 24 selected</small></li><li><span>AIME Qualifier</span><small>11 / 15</small></li><li><span>AMC 12 Honor</span></li><li><span>International Economics Olympiad</span><small>High Distinction</small></li></ul></div>
-        <div class="toolkit reveal"><span class="small-label">Research toolkit</span><p>Python, C++, Java, R</p><p class="muted">PyTorch · NumPy · SciPy · Pandas · scikit-learn · Keras · LightGBM · XGBoost · LaTeX · Git</p></div>
-      </div>
-    </section>
+  <section class="research section-wrap" id="research" aria-labelledby="research-title">
+    <div class="section-heading"><h2 id="research-title">Research<span>.</span></h2><p>Generative models, probability,<br>and what we can learn from finite samples.</p></div>
+    <article class="lead-project" id="mode-recall">
+      <div class="lead-copy"><p class="project-meta">First author <span>·</span> ICLR 2027, under review</p><h3>Certified Mode-Recall<br>for Generative Models</h3><p>I developed a finite-sample framework to certify modes as present, absent, or inconclusive—even with imperfect classifier labels.</p><details><summary>Read about the work <span aria-hidden="true">+</span></summary><div class="details-body"><p>I proved labeller-conditional validity and consistency, with sample-complexity bounds for rare modes. Experiments evaluate GANs, flow matching, and pretrained diffusion models on StackedMNIST, CIFAR-10, and CelebA subgroups.</p></div></details><p class="project-date">May 2026 — Present</p></div>
+      <figure class="mode-art"><img src="../assets/mode-recall-night.svg" alt="Schematic of mode-level certification: present, absent, or inconclusive." width="640" height="480" loading="lazy"></figure>
+    </article>
+    <div class="supporting-projects">
+      <article class="project" id="object-sounds"><a class="project-image paper-image" href="https://clink-chop-thud.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Clink! Chop! Thud! project"><img src="../assets/clink-teaser.png" alt="Published project figure showing objects and their interaction sounds." loading="lazy"><span aria-hidden="true">↗</span></a><div class="project-copy"><p class="project-meta">ICCV 2025 <span>·</span> Third author</p><h3>Clink! Chop! Thud!</h3><p class="project-subtitle">Learning Object Sounds from Real-World Interactions</p><p>I contributed annotation and feature pipelines, evaluation, and ablations for learning which object produces a sound in egocentric video.</p><div class="project-links"><a href="https://openaccess.thecvf.com/content/ICCV2025/html/Yang_Clink_Chop_Thud_-_Learning_Object_Sounds_from_Real-World_Interactions_ICCV_2025_paper.html" target="_blank" rel="noopener noreferrer">Paper ↗</a><a href="https://clink-chop-thud.github.io/" target="_blank" rel="noopener noreferrer">Project ↗</a><a href="https://github.com/mengyu-yang/clink-chop-thud" target="_blank" rel="noopener noreferrer">Code ↗</a></div></div></article>
+      <article class="project" id="forecasting"><div class="project-image forecast-image"><img src="../assets/forecast-night.svg" alt="Illustrative forecast curve with an uncertainty band." width="640" height="480" loading="lazy"></div><div class="project-copy"><p class="project-meta">Georgia Tech <span>·</span> Aug 2025 — Aug 2026</p><h3>Forecasting renewable energy</h3><p class="project-subtitle">Wind generation and power markets</p><p>I developed probabilistic wind and solar forecasts with domain-informed deep models, connecting generation uncertainty to dispatch and power-market decisions.</p><details><summary>Methods <span aria-hidden="true">+</span></summary><div class="details-body"><p>Transformer/DKFormer models, ARIMA and SVM baselines, spatiotemporal features, ensemble learning, and Bayesian model combination.</p></div></details></div></article>
+    </div>
+  </section>
 
-    <section class="experience" id="experience" aria-labelledby="experience-title">
-      <div class="experience-heading reveal"><p class="eyebrow">04 / Experience</p><h2 id="experience-title">Work in<br><em>industry.</em></h2></div>
-      <div class="experience-list">
-        <article class="experience-item reveal"><div class="entry-meta"><span>Shanghai</span><span>May — Aug 2026</span></div><h3>UnionPay Advisors</h3><p class="role">Data Science Intern</p><p>Credit-default modeling with LightGBM on 100K+ transactions, with feature engineering and stability analysis.</p><div class="experience-metrics"><span><b>0.78</b> Out-of-time AUC</span><span><b>700+</b> Engineered features</span></div></article>
-        <article class="experience-item reveal"><div class="entry-meta"><span>New York · Hybrid</span><span>Feb — Apr 2025</span></div><h3>Hyde Park<br> Investment Service</h3><p class="role">Quantitative Research Intern</p><p>Combined LLM-assisted news sentiment with macroeconomic data for gold-price forecasting using logistic regression and XGBoost.</p><div class="experience-metrics"><span><b>≈0.8</b> AUC</span><span><b>2.4</b> Backtested Sharpe</span></div></article>
-      </div>
-    </section>
+  <section class="life section-wrap" id="life" aria-labelledby="life-title">
+    <div class="section-heading"><h2 id="life-title">Life<span>.</span></h2></div>
+    <div class="personal-note"><span class="note-star" aria-hidden="true">✳</span><p>I’m an optimist. Cycling was my first real lesson in persistence. I’ve wanted to do research for a long time, and I want to keep doing it—whether in academia or industry.</p></div>
+    <div class="life-grid">
+      <article class="cycling-story"><div class="story-copy"><p class="small-label">Cycling in Beijing</p><h3>A ride to Tiananmen.<br>Or up a mountain.</h3><p>Those are some of my favorite ways to spend a day. I haven’t kept up cycling in the U.S., and I miss it.</p></div><img src="../assets/cycling-night.svg" width="720" height="380" alt="Illustration of a road winding through mountains at dusk." loading="lazy"></article>
+      <article class="dog-story" id="harvard-yale"><div class="story-copy"><p class="small-label">My two brothers</p><h3>Harvard <em>&amp;</em> Yale.</h3><p>Harvard is the lively one.<br>Yale is the easygoing one.</p></div><div class="dog-portrait"><img src="../assets/life-huskies.svg" width="800" height="580" alt="An illustration of two huskies; Harvard and Yale are my dogs." loading="lazy"></div><details class="dog-story-detail"><summary>About those names <span aria-hidden="true">+</span></summary><div class="details-body"><p>I joke that I’m not applying to Harvard or Yale University to keep my relationship with these two intact.</p></div></details></article>
+    </div>
+    <div class="sports-row"><div><p class="small-label">These days</p><h3>Tennis &amp; badminton.</h3></div><p>I grew up playing basketball, swimming, and practicing taekwondo. I was also on my school’s flag football team. At Georgia Tech, I’ve gravitated toward racket sports.</p><div class="racket-mark" aria-hidden="true"><svg viewBox="0 0 130 130" fill="none"><ellipse cx="72" cy="46" rx="26" ry="36" transform="rotate(35 72 46)" stroke="currentColor" stroke-width="2"/><path d="M52 69 24 110m23-36 8 6M49 30l38 26M43 42l37 26M54 18l39 27M64 15 44 57M79 20 53 67M91 31 68 74" stroke="currentColor" stroke-width="1"/><circle cx="104" cy="96" r="12" stroke="currentColor" stroke-width="2"/><path d="M94 89q12 7 17 13" stroke="currentColor"/></svg></div></div>
+    <p class="games-note">And when I’m playing something on a screen: <span>CS:GO</span> or <span>Civilization VI.</span></p>
+  </section>
 
-    <section class="contact section-light" id="contact" aria-labelledby="contact-title"><div class="reveal"><p class="eyebrow dark-eyebrow">05 / Contact</p><h2 id="contact-title">Say<br><em>hello.</em></h2><a class="email" href="mailto:hpei8@gatech.edu">hpei8@gatech.edu <span aria-hidden="true">↗</span></a></div><div class="contact-links reveal"><a href="../assets/Haozheng_Pei_CV.pdf">Curriculum vitae <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/haozheng-pei/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="../academic/index.html">Academic version <span aria-hidden="true">↗</span></a></div></section>
-  </main>
-  <footer><a class="footer-name" href="#home">Haozheng Pei</a><span>Georgia Institute of Technology</span><a href="../index.html">Compare versions <span aria-hidden="true">↗</span></a></footer>
+  <section class="about section-wrap" id="about" aria-labelledby="about-title">
+    <div class="section-heading"><h2 id="about-title">Background<span>.</span></h2><a class="inline-link" href="../assets/Haozheng_Pei_CV.pdf">Full CV <span aria-hidden="true">↗</span></a></div>
+    <div class="background-grid"><div><p class="small-label">Education</p><h3>Georgia Institute<br>of Technology</h3><p>B.S. Mathematics<br>B.S. Industrial and Systems Engineering</p><p class="muted">Expected May 2028 · GPA 3.77 / 4.00<br>Artificial Intelligence and Operations Research</p></div><div><p class="small-label">Teaching</p><h3>Basic Statistical Methods</h3><p>Undergraduate Teaching Assistant<br>ISyE 3030 · Georgia Tech</p><p class="muted">August 2025 — Present<br>Supporting a class of 70+ students.</p></div></div>
+    <div class="experience-list"><div class="experience-label">Previously</div><article><span class="date">May — Aug 2026</span><h3>UnionPay Advisors</h3><p>Data Science Intern · Shanghai</p><p class="muted">Credit-default modeling, feature engineering, and stability analysis.</p></article><article><span class="date">Feb — Apr 2025</span><h3>Hyde Park Investment Service</h3><p>Quantitative Research Intern · New York</p><p class="muted">News sentiment and macroeconomic data for gold-price forecasting.</p></article></div>
+    <div class="about-bottom"><p>Python, C++, Java, R · PyTorch, NumPy, SciPy, Pandas · LaTeX, Git</p><a href="../academic/index.html">More research and background <span aria-hidden="true">↗</span></a></div>
+  </section>
+  <section class="contact section-wrap" id="contact" aria-labelledby="contact-title"><p class="small-label">Get in touch</p><div class="contact-main"><h2 id="contact-title">Say hello<span>↗</span></h2><a href="mailto:hpei8@gatech.edu">hpei8@gatech.edu</a></div><div class="contact-bottom"><a href="https://www.linkedin.com/in/haozheng-pei/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></section>
+</main>
+<footer><a href="#home">Haozheng Pei</a><span>Georgia Tech</span><a href="../academic/index.html">Academic version ↗</a></footer>
 </body>
 </html>
