@@ -21,27 +21,17 @@
 </header>
 <main id="main">
   <section class="hero" id="home" aria-labelledby="name">
-    <div class="hero-orbit" aria-hidden="true"></div>
     <div class="hero-copy">
       <p class="hello">Hi, I’m</p>
       <h1 id="name">Haozheng Pei</h1>
       <p class="hero-intro">I’m an undergraduate at Georgia Tech working on <strong>flow matching, diffusion, and world models.</strong></p>
-      <p class="hero-personal">Usually optimistic. Often on a court.<br>Brother to two huskies, <a href="#harvard-yale">Harvard and Yale.</a></p>
+      <p class="hero-personal">Outside research, I play tennis and badminton. My two huskies, <a href="#harvard-yale">Harvard and Yale</a>, are like brothers to me.</p>
       <a class="hero-cta" href="#research">My research <span aria-hidden="true">↘</span></a>
     </div>
-    <figure class="research-visual" aria-label="Interactive research illustrations">
-      <div class="research-modes" role="group" aria-label="Research visualization" hidden>
-        <button type="button" data-research-mode="flow" aria-pressed="true">Flow matching</button>
-        <button type="button" data-research-mode="diffusion" aria-pressed="false">Diffusion</button>
-        <button type="button" data-research-mode="world" aria-pressed="false">World models</button>
-      </div>
-      <div class="hero-art" id="hero-art"><img id="hero-fallback" src="../assets/research-poster.svg" alt="Illustration of a cloud of particles becoming an ordered surface."><canvas id="hero-canvas" role="img" aria-label="Conceptual illustration of smooth transport from noise to structure" aria-describedby="simulation-caption"></canvas></div>
-      <figcaption id="simulation-caption">Illustrative transport from noise to structure.</figcaption>
-      <div class="art-controls" hidden>
-        <button type="button" id="motion-toggle" aria-label="Pause animation"><span class="motion-symbol" aria-hidden="true">Ⅱ</span><span class="motion-label">Pause</span></button>
-        <label class="sr-only" for="shape-progress">Animation progress</label><input id="shape-progress" type="range" min="0" max="100" value="60" aria-label="Animation progress"><output id="flow-value" for="shape-progress" aria-live="off">t = 0.60</output>
-      </div>
-    </figure>
+    <div class="ambient-visual" aria-hidden="true">
+      <div class="hero-art" id="hero-art"><img id="hero-fallback" src="../assets/ambient-poster.svg" alt=""><canvas id="hero-canvas"></canvas></div>
+    </div>
+    <button type="button" class="ambient-toggle" id="motion-toggle" aria-label="Pause background animation" hidden><span class="motion-symbol" aria-hidden="true">Ⅱ</span></button>
     <div class="hero-bottom"><span>Mathematics + Industrial &amp; Systems Engineering</span><div><a href="../assets/Haozheng_Pei_CV.pdf">CV ↗</a><a href="https://www.linkedin.com/in/haozheng-pei/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:hpei8@gatech.edu">Email ↗</a></div></div>
   </section>
 
