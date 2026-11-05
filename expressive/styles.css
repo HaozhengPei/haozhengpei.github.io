@@ -42,3 +42,5 @@ html[lang="zh-CN"]{--sans:Manrope,'PingFang SC','Microsoft YaHei','Noto Sans CJK
 
 .travel .destinations span{display:inline-block;white-space:pre-wrap}html.zh-personal .travel .destinations span{white-space:nowrap}
 @media(max-width:420px){.about .section-heading{align-items:flex-start;flex-direction:column;gap:14px}.about .section-heading h2{max-width:100%;font-size:38px}}
+
+.hero-location{font-size:12px;color:var(--muted);line-height:1.6;margin-top:14px;letter-spacing:.01em}.hero-location+.hero-intro{margin-top:19px}
