@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8f7f3">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23203850'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='36' fill='%23fff'%3EH%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="../../academic/styles.css?v=1311acad08">
+  <link rel="stylesheet" href="../../academic/styles.css?v=3f1a595294">
   <link rel="stylesheet" href="../../assets/chinese-typography.css?v=ccf2321ab2">
   <link rel="preload" href="../../assets/fonts/noto-sans-sc-site.woff2?v=419cf70dc5" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../../assets/fonts/noto-serif-sc-site.woff2?v=b7baadb291" as="font" type="font/woff2" crossorigin>
@@ -125,10 +125,11 @@
           <div class="item-topline"><span class="venue">ICLR 2027 <span class="publication-status">审稿中</span></span><span class="date">2026 年 5 月—至今</span></div>
           <h3><a href="../research/mode-recall/">生成模型的模式覆盖率认证</a></h3>
           <p class="paper-title-original" lang="en">Certifying What Your Generative Model Covers: Labeller-Conditional, Finite-Sample Mode-Recall Guarantees</p>
+          <p class="paper-authors" lang="en"><strong>Haozheng Pei</strong><sup>1</sup>, Jian Xu<sup>2</sup></p><p class="paper-affiliations"><sup>1</sup> 佐治亚理工学院 <span aria-hidden="true">·</span> <sup>2</sup> RIKEN</p>
           <p class="role">第一作者</p>
           <p>我建立了一套有限样本认证框架，在分类器可能误标的情况下，判断预定义模式的概率达到容忍阈值、低于阈值，或现有证据不足以判定。统计保证依赖于标签器的混淆界在生成数据上成立。</p>
           <p>我证明了方法的有效性和线性规划版本的一致性，推导了稀有模式认证的样本复杂度界，并在 StackedMNIST、CIFAR-10 和 CelebA 子群上评估了 GAN、流匹配和预训练扩散模型。</p>
-          <div class="paper-links"><a href="../../assets/papers/certifying-generative-mode-coverage.pdf?v=0745bf74af" target="_blank" rel="noopener">论文 PDF <span aria-hidden="true">↗</span></a><a href="../research/mode-recall/">研究详情 <span aria-hidden="true">↗</span></a></div>
+          <div class="paper-links"><a href="https://openreview.net/forum?id=7OVZwupz0E" target="_blank" rel="noopener noreferrer">OpenReview <span aria-hidden="true">↗</span></a><a href="../../assets/papers/certifying-generative-mode-coverage.pdf?v=0745bf74af" target="_blank" rel="noopener">论文 PDF <span aria-hidden="true">↗</span></a><a href="../research/mode-recall/">研究详情 <span aria-hidden="true">↗</span></a></div>
           <details>
             <summary>实验结果与适用范围 <span aria-hidden="true">+</span></summary>
             <div class="detail-content"><p>在包含 1,000 个模式的 StackedMNIST 实验中，两种容量的 DCGAN 和一个 rectified flow 模型的认证覆盖率分别为 29%、53% 和 73%，对应真实覆盖率 54%、92% 和 100%；近邻召回指标在三者上均接近零。认证结果是保守下界，不是覆盖率的点估计。研究衡量预定义模式之间的覆盖，不衡量模式内部的多样性。</p></div>

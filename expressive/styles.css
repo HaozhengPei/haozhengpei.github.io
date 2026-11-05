@@ -60,3 +60,8 @@ html[lang="zh-CN"]{--sans:Manrope,'PingFang SC','Microsoft YaHei','Noto Sans CJK
 @media(max-width:1100px){.cycling-feature-pair{gap:22px}.cycling-second-row{gap:35px;margin-left:4%}.cycling-album{margin-left:4%}}
 @media(max-width:760px){.cycling-heading{align-items:flex-start;flex-direction:column;gap:10px;margin-bottom:24px}.cycling-heading h3{font-size:30px}.cycling-heading>p{font-size:12px}.cycling-feature-pair{grid-template-columns:1fr;gap:25px}.cycling-event-portrait{width:70%;max-width:300px;justify-self:end}.cycling-second-row{grid-template-columns:1fr;gap:24px;margin:28px 0 0}.cycling-second-row .story-copy>p{max-width:450px;font-size:14px}.cycling-album{margin:24px 0 0}.cycling-archive{gap:20px;grid-template-columns:1.5fr 1fr}.cycling-archive figcaption{font-size:10px}.research-affiliation{gap:20px}}
 @media print{.cycling-feature-pair,.cycling-second-row figure,.cycling-album{display:none}.cycling-second-row{display:block;margin:0}.cycling-heading{display:block}.cycling-heading>p,.cycling-second-row .story-copy>p{color:#222}}
+
+#mode-recall .paper-authors{font-size:13px;line-height:1.8;color:#bdcbd7;margin:0 0 3px}
+#mode-recall .paper-authors strong{font-weight:700;color:#e0e7ec}
+#mode-recall .paper-affiliations{font-size:11px;line-height:1.8;color:#98aaba;margin:0 0 20px}
+.paper-authors sup,.paper-affiliations sup{font-size:.7em;line-height:0;vertical-align:super;margin-left:1px}

@@ -95,3 +95,7 @@ html[lang="en"] .intro h1{font-size:clamp(42px,4.5vw,60px);letter-spacing:-1.8px
 .profile-research .current-research-entry .note-status{font-size:10px;line-height:1.65;margin-top:5px}
 @media(max-width:760px){.profile-research .current-research-entry .text-link{font-size:12px}.profile-research .current-research-entry .note-status{font-size:10px}}
 @media(max-width:420px){.intro-note.profile-aside{grid-template-columns:1fr;gap:23px;max-width:100%}.profile-portrait{width:148px;grid-column:1;grid-row:1}.profile-research{grid-column:1;grid-row:2;width:100%;border-top:1px solid var(--rule);padding-top:18px}.profile-research .margin-label{margin-bottom:12px}.current-research-entry+.current-research-entry{margin-top:12px;padding-top:12px}}
+
+.research-item .paper-authors:has(+.paper-affiliations){margin-bottom:3px}
+.research-item .paper-affiliations{font-size:11px;line-height:1.8;color:var(--muted);margin:0 0 13px}
+.paper-authors sup,.paper-affiliations sup{font-size:.7em;line-height:0;vertical-align:super;margin-left:1px}
