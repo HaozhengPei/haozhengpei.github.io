@@ -1,14 +1,68 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="research-page">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, follow">
-  <meta http-equiv="refresh" content="0; url=../../academic/index.html#world-models">
-  <link rel="canonical" href="https://haozhengpei.github.io/academic/">
-  <title>Haozheng Pei</title>
+  <link rel="icon" href="../../assets/favicon.svg?v=9bde83f793" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/research-pages.css?v=7335092413">
+  <script src="../../language.js?v=802c5b58a4" defer></script>
+  <!-- BEGIN GENERATED SEARCH METADATA -->
+  <title>World Models and Simulation | Haozheng Pei | Georgia Tech</title>
+  <meta name="description" content="Haozheng Pei’s research with Prof. Bo Zhu’s group: terrain generation, navigation scenario search, and world models for robot learning.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://haozhengpei.github.io/research/world-models/">
+  <link rel="alternate" hreflang="en" href="https://haozhengpei.github.io/research/world-models/">
+  <link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/research/world-models/">
+  <link rel="alternate" hreflang="x-default" href="https://haozhengpei.github.io/research/world-models/">
+  <meta property="og:title" content="World Models and Simulation | Haozheng Pei | Georgia Tech">
+  <meta property="og:description" content="Haozheng Pei’s research with Prof. Bo Zhu’s group: terrain generation, navigation scenario search, and world models for robot learning.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Haozheng Pei">
+  <meta property="og:url" content="https://haozhengpei.github.io/research/world-models/">
+  <meta property="og:image" content="https://haozhengpei.github.io/assets/photos/haozheng-portrait.jpg">
+  <meta property="og:image:alt" content="Haozheng Pei">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <!-- END GENERATED SEARCH METADATA -->
 </head>
 <body>
-  <p><a href="../../academic/index.html#world-models">Continue to the academic profile</a></p>
+<a class="skip" href="#main">Skip to content</a>
+<header class="detail-header">
+  <a class="detail-brand" href="../../index.html">Haozheng Pei</a>
+  <nav aria-label="Page navigation"><a href="../../academic/index.html">Academic version</a><a class="language-switch" href="../../zh/research/world-models/index.html" lang="zh-CN" hreflang="zh-CN" aria-label="切换为中文">中文</a></nav>
+</header>
+<main id="main">
+  <article>
+    <header class="paper-header">
+      <p class="paper-kicker">RobotGen Studio · Ongoing research</p>
+      <h1>World Models and Simulation for Robot Learning</h1>
+      <p class="paper-role">Research Assistant · Prof. Bo Zhu’s group · Georgia Tech<br>October 2026–present</p>
+      <p class="paper-deck">My current focus is procedural terrain search: how can we choose simulated environments that reveal weaknesses in navigation? I am reviewing related work and designing initial experiments, with the aim of connecting scenario search to desert simulation and model evaluation.</p>
+      <div class="paper-actions"><a href="#approach">Current direction <span aria-hidden="true">↓</span></a><a href="../../academic/index.html#world-models">Academic overview <span aria-hidden="true">↗</span></a></div>
+    </header>
+
+    <section class="paper-section" id="approach">
+      <h2>A controlled starting point</h2>
+      <p>I plan to begin with a fixed terrain generator, vehicle, and controller, varying a small set of parameters such as slope, surface roughness, and obstacle layout. The proposed loop generates a terrain, runs a navigation trial, records the outcome, and selects the next parameters. Keeping these components fixed would make it easier to study the search strategy itself.</p>
+    </section>
+
+    <section class="paper-section" id="questions">
+      <h2>Which scenarios are useful?</h2>
+      <p>Can search find reproducible failures more efficiently than random sampling under the same simulation budget? Does it uncover different failure mechanisms, or repeatedly find the same case? I am considering navigation success, travel time, and failure location as evaluation signals. Parameter bounds should exclude unrealistic terrain, while physical validity and navigability need separate checks: a plausible landscape may still have no traversable route.</p>
+    </section>
+
+    <section class="paper-section" id="context">
+      <h2>The connection to world models</h2>
+      <p>Within Prof. Bo Zhu’s group, RobotGen Studio aims to connect scene reconstruction, physics simulation, task generation, and demonstrations for robot learning, including vision-language-action models. The project also considers how data and experience can be retained and reused across tasks. My terrain-search work is an early step toward studying how these environments can support evaluation and learning.</p>
+      <p>This direction sits within my broader interest in executable world representations and coding agents for simulation. A terrain generator defines an environment; a predictive world model estimates what actions will do within it. Eventually, scenario search could help identify conditions where prediction errors affect navigation decisions. A vehicle’s failure alone would not establish that its world model was wrong.</p>
+    </section>
+
+    <section class="paper-section" id="next">
+      <h2>Next steps</h2>
+      <p>I plan to compare random sampling with a simple search baseline and retain replayable cases for analysis. The next stage would extend the group’s desert simulator and integrate scenario search into navigation and model testing. Simulation fidelity, search efficiency, and scenario diversity will guide how I refine the research question.</p>
+    </section>
+  </article>
+</main>
+<footer class="detail-footer"><a href="../../index.html#research">Back to research</a><a href="../../academic/index.html">Academic version <span aria-hidden="true">↗</span></a></footer>
 </body>
 </html>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8f7f3">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23203850'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='36' fill='%23fff'%3EH%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=c9bc2f59ba">
+  <link rel="stylesheet" href="styles.css?v=1311acad08">
   <script src="script.js?v=755f562096" defer></script>
   <script src="../language.js?v=802c5b58a4" defer></script>
   <link rel="stylesheet" href="../assets/photo-viewer.css?v=28ba1ac8b4">
@@ -88,7 +88,7 @@
         <h1 id="name">Haozheng Pei</h1>
         <p class="intro-location">Based in Atlanta · Home in Beijing</p>
         <p class="intro-body">I am an undergraduate at Georgia Tech studying Mathematics and Industrial and Systems Engineering.</p>
-        <p class="intro-body">My research asks which modes a generative model covers or misses, and how confidently we can answer that question from finite samples. I work with diffusion and flow matching.</p>
+        <p class="intro-body">My research asks which modes a generative model covers or misses, and how confidently we can answer that question from finite samples. I work with diffusion and flow matching, and explore world models and simulation for robot learning in Prof. Bo Zhu’s group.</p>
         <p class="intro-personal">Outside research, I play tennis and badminton. My two huskies, Harvard and Yale, are like brothers to me. <a href="#outside">More about me <span aria-hidden="true">↓</span></a></p>
         <div class="intro-links">
           <a href="mailto:hpei8@gatech.edu">University email <span aria-hidden="true">↗</span></a>
@@ -97,12 +97,20 @@
           <a href="../assets/Haozheng_Pei_CV.pdf?v=fd47d78d3b" target="_blank" rel="noopener">Curriculum vitae <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-      <aside class="intro-note profile-aside" aria-label="Portrait and selected research">
+      <aside class="intro-note profile-aside" aria-label="Portrait and current research">
         <figure class="profile-portrait"><a href="../assets/photos/haozheng-portrait.jpg" data-photo data-caption="Haozheng Pei"><img src="../assets/photos/haozheng-portrait.jpg" alt="Haozheng Pei" width="2587" height="3621" fetchpriority="high" decoding="async"></a></figure>
         <div class="profile-research">
-          <span class="margin-label">Selected research</span>
-          <a class="text-link" href="#mode-recall">Certified Mode-Recall <span aria-hidden="true">↓</span></a>
-          <span class="note-status">First-author work · under review</span>
+          <span class="margin-label">Current research</span>
+          <div class="current-research-list">
+            <div class="current-research-entry">
+              <a class="text-link" href="#mode-recall">Certified Mode-Recall <span aria-hidden="true">↓</span></a>
+              <span class="note-status">First-author work · under review</span>
+            </div>
+            <div class="current-research-entry">
+              <a class="text-link" href="#world-models">World Models &amp; Simulation <span aria-hidden="true">↓</span></a>
+              <span class="note-status">Bo Zhu’s group · RobotGen Studio</span>
+            </div>
+          </div>
         </div>
       </aside>
     </section>
@@ -135,9 +143,12 @@
         </article>
 
         <article class="research-item" id="world-models">
-          <div class="item-topline"><span class="venue">Georgia Tech</span><span class="date">Oct 2026–present</span></div>
-          <h3>RobotGen Studio</h3>
-          <p class="role">Research Assistant · Prof. Bo Zhu’s group</p>
+          <div class="item-topline"><span class="venue">RobotGen Studio <span class="publication-status">Ongoing research</span></span><span class="date">Oct 2026–present</span></div>
+          <h3><a href="../research/world-models/">World Models and Simulation for Robot Learning</a></h3>
+          <p class="role">Research Assistant · Prof. Bo Zhu’s group · Georgia Tech</p>
+          <p>I work with Prof. Bo Zhu’s group on RobotGen Studio, exploring world models and simulation for robot learning. My work combines literature review with early experiment design: how executable world representations and controllable environments can help us test a model or navigation system under changes in its surroundings.</p>
+          <p>My current focus is procedural terrain parameter search. I am studying how to vary slope, surface roughness, and obstacle spacing within reasonable ranges to identify reproducible navigation failures, and how to compare search strategies under the same simulation budget. I am designing initial tests in a simpler environment, with plans to integrate this search workflow into the group’s desert simulator and extend it as the simulator develops.</p>
+          <div class="paper-links"><a href="../research/world-models/">Research direction &amp; current work <span aria-hidden="true">↗</span></a></div>
         </article>
 
         <article class="research-item" id="forecasting">

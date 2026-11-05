@@ -1,14 +1,69 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="research-page">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, follow">
-  <meta http-equiv="refresh" content="0; url=../../../zh/academic/index.html#world-models">
-  <link rel="canonical" href="https://haozhengpei.github.io/zh/academic/">
-  <title>裴浩正</title>
+  <link rel="icon" href="../../../assets/favicon.svg?v=9bde83f793" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../assets/research-pages.css?v=7335092413">
+  <link rel="stylesheet" href="../../../assets/chinese-typography.css?v=ccf2321ab2">
+  <script src="../../../language.js?v=802c5b58a4" defer></script>
+  <!-- BEGIN GENERATED SEARCH METADATA -->
+  <title>面向机器人学习的世界模型与仿真 | 裴浩正 Haozheng Pei</title>
+  <meta name="description" content="裴浩正在佐治亚理工学院 Bo Zhu 教授课题组参与的研究：从地形生成与导航场景搜索切入，探索世界模型与物理仿真在机器人学习中的应用。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://haozhengpei.github.io/zh/research/world-models/">
+  <link rel="alternate" hreflang="en" href="https://haozhengpei.github.io/research/world-models/">
+  <link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/research/world-models/">
+  <link rel="alternate" hreflang="x-default" href="https://haozhengpei.github.io/research/world-models/">
+  <meta property="og:title" content="面向机器人学习的世界模型与仿真 | 裴浩正 Haozheng Pei">
+  <meta property="og:description" content="裴浩正在佐治亚理工学院 Bo Zhu 教授课题组参与的研究：从地形生成与导航场景搜索切入，探索世界模型与物理仿真在机器人学习中的应用。">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Haozheng Pei">
+  <meta property="og:url" content="https://haozhengpei.github.io/zh/research/world-models/">
+  <meta property="og:image" content="https://haozhengpei.github.io/assets/photos/haozheng-portrait.jpg">
+  <meta property="og:image:alt" content="裴浩正">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <!-- END GENERATED SEARCH METADATA -->
 </head>
 <body>
-  <p><a href="../../../zh/academic/index.html#world-models">前往学术主页</a></p>
+<a class="skip" href="#main">跳到正文</a>
+<header class="detail-header">
+  <a class="detail-brand" href="../../../zh/index.html">裴浩正</a>
+  <nav aria-label="页面导航"><a href="../../../zh/academic/index.html">学术版</a><a class="language-switch" href="../../../research/world-models/index.html" lang="en" hreflang="en" aria-label="Switch to English">English</a></nav>
+</header>
+<main id="main">
+  <article>
+    <header class="paper-header">
+      <p class="paper-kicker">RobotGen Studio · 在研</p>
+      <h1>面向机器人学习的世界模型与仿真</h1>
+      <p class="paper-role">佐治亚理工学院 · Bo Zhu 教授课题组 · 科研助理<br>2026 年 10 月至今</p>
+      <p class="paper-deck">我目前从地形参数搜索入手，研究如何选择仿真场景，更有效地发现导航中的问题。现阶段主要进行文献调研和初步实验设计，后续希望将场景搜索与沙漠仿真结合，用于导航和模型测试。</p>
+      <div class="paper-actions"><a href="#approach">当前方向 <span aria-hidden="true">↓</span></a><a href="../../../zh/academic/index.html#world-models">学术版简介 <span aria-hidden="true">↗</span></a></div>
+    </header>
+
+    <section class="paper-section" id="approach">
+      <h2>先从可控的地形变化开始</h2>
+      <p>初步计划固定地形生成器、车辆和控制器，只改变坡度、地表起伏、障碍物布局等少量参数。每次生成地形后，让车辆尝试导航，记录结果，再决定下一组参数。这样可以先把研究范围收窄，比较不同搜索策略如何选择下一次测试场景。</p>
+    </section>
+
+    <section class="paper-section" id="questions">
+      <h2>什么样的场景值得研究？</h2>
+      <p>在相同仿真预算下，搜索能否比随机采样更快找到可复现的问题？找到的是不同的失败原因，还是同一类失败的反复出现？我正在考虑用导航成功率、通行时间和失败位置等指标进行评价。同时需要给参数设定合理范围，并分别检查物理合理性与可通行性：地形符合物理规律，并不意味着一定存在能通过的路线。</p>
+    </section>
+
+    <section class="paper-section" id="context">
+      <h2>与世界模型的联系</h2>
+      <p>Bo Zhu 教授课题组的 RobotGen Studio 希望把场景重建、物理模拟、任务与操作示范生成连接起来，为机器人学习及视觉—语言—动作模型提供环境和训练数据，也关注如何积累和复用不同任务中的数据与经验。地形搜索是我目前的切入点，希望由此研究仿真环境如何支持模型评估与学习。</p>
+      <p>这一方向延续了我对可执行世界表示、编程智能体和仿真的兴趣。地形生成器负责构建环境，预测型世界模型则估计动作在环境中会产生什么后果。后续可以利用场景搜索，寻找模型预测错误影响导航决策的情况。不过，车辆导航失败本身并不能说明世界模型预测有误，仍需区分模型、控制器和仿真带来的影响。</p>
+    </section>
+
+    <section class="paper-section" id="next">
+      <h2>下一步</h2>
+      <p>我计划先比较随机采样与一种简单搜索方法，并保存可回放、可重复测试的案例。之后进一步完善和扩展课题组的沙漠模拟器，将场景搜索接入导航与模型测试，围绕仿真质量、搜索效率和场景多样性继续细化研究问题。</p>
+    </section>
+  </article>
+</main>
+<footer class="detail-footer"><a href="../../../zh/index.html#research">返回研究列表</a><a href="../../../zh/academic/index.html">学术版 <span aria-hidden="true">↗</span></a></footer>
 </body>
 </html>

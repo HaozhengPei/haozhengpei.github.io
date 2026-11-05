@@ -48,4 +48,16 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/research/clink-chop-thud/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://haozhengpei.github.io/research/clink-chop-thud/" />
   </url>
+  <url>
+    <loc>https://haozhengpei.github.io/research/world-models/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haozhengpei.github.io/research/world-models/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/research/world-models/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haozhengpei.github.io/research/world-models/" />
+  </url>
+  <url>
+    <loc>https://haozhengpei.github.io/zh/research/world-models/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haozhengpei.github.io/research/world-models/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/research/world-models/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haozhengpei.github.io/research/world-models/" />
+  </url>
 </urlset>

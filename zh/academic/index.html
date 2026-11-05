@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8f7f3">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23203850'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='36' fill='%23fff'%3EH%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="../../academic/styles.css?v=c9bc2f59ba">
-  <link rel="stylesheet" href="../../assets/chinese-typography.css?v=fa5982ff97">
-  <link rel="preload" href="../../assets/fonts/noto-sans-sc-site.woff2?v=be841d9b24" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../../assets/fonts/noto-serif-sc-site.woff2?v=68d5b74835" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../academic/styles.css?v=1311acad08">
+  <link rel="stylesheet" href="../../assets/chinese-typography.css?v=ccf2321ab2">
+  <link rel="preload" href="../../assets/fonts/noto-sans-sc-site.woff2?v=419cf70dc5" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/noto-serif-sc-site.woff2?v=b7baadb291" as="font" type="font/woff2" crossorigin>
   <script src="../../academic/script.js?v=755f562096" defer></script>
   <script src="../../language.js?v=802c5b58a4" defer></script>
   <link rel="stylesheet" href="../../assets/photo-viewer.css?v=28ba1ac8b4">
@@ -91,7 +91,7 @@
         <h1 id="name">裴浩正</h1>
         <p class="intro-location">家在北京 · 现居亚特兰大</p>
         <p class="intro-body">我是佐治亚理工学院的本科生，主修数学、工业与系统工程。</p>
-        <p class="intro-body">我主要研究如何用有限样本判断生成模型覆盖了哪些模式、遗漏了哪些模式，以及这些判断有多可靠，涉及扩散模型和流匹配。</p>
+        <p class="intro-body">我主要研究如何用有限样本判断生成模型覆盖了哪些模式、遗漏了哪些模式，以及这些判断有多可靠，涉及扩散模型和流匹配。我也在 Bo Zhu 教授课题组研究面向机器人学习的世界模型与仿真。</p>
         <p class="intro-personal">平时我喜欢打网球和羽毛球，家里还有两只哈士奇——哈佛和耶鲁，是我的两个兄弟。 <a href="#outside">研究之外 <span aria-hidden="true">↓</span></a></p>
         <div class="intro-links">
           <a href="mailto:hpei8@gatech.edu">学校邮箱 <span aria-hidden="true">↗</span></a>
@@ -100,12 +100,20 @@
           <a href="../../assets/Haozheng_Pei_CV_ZH.pdf?v=c716325816" target="_blank" rel="noopener">学术简历 <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-      <aside class="intro-note profile-aside" aria-label="个人照片与研究工作">
+      <aside class="intro-note profile-aside" aria-label="个人照片与当前研究">
         <figure class="profile-portrait"><a href="../../assets/photos/haozheng-portrait.jpg" data-photo data-caption="裴浩正"><img src="../../assets/photos/haozheng-portrait.jpg" alt="裴浩正" width="2587" height="3621" fetchpriority="high" decoding="async"></a></figure>
         <div class="profile-research">
-          <span class="margin-label">研究工作</span>
-          <a class="text-link" href="#mode-recall">模式覆盖率认证 <span aria-hidden="true">↓</span></a>
-          <span class="note-status">第一作者 · 论文审稿中</span>
+          <span class="margin-label">当前研究</span>
+          <div class="current-research-list">
+            <div class="current-research-entry">
+              <a class="text-link" href="#mode-recall">模式覆盖率认证 <span aria-hidden="true">↓</span></a>
+              <span class="note-status">第一作者 · 论文审稿中</span>
+            </div>
+            <div class="current-research-entry">
+              <a class="text-link" href="#world-models">世界模型与仿真 <span aria-hidden="true">↓</span></a>
+              <span class="note-status">Bo Zhu 教授课题组 · RobotGen Studio</span>
+            </div>
+          </div>
         </div>
       </aside>
     </section>
@@ -138,9 +146,12 @@
         </article>
 
         <article class="research-item" id="world-models">
-          <div class="item-topline"><span class="venue">佐治亚理工学院</span><span class="date">2026 年 10 月—至今</span></div>
-          <h3>RobotGen Studio</h3>
-          <p class="role">科研助理 · Bo Zhu 教授课题组</p>
+          <div class="item-topline"><span class="venue">RobotGen Studio <span class="publication-status">在研</span></span><span class="date">2026 年 10 月—至今</span></div>
+          <h3><a href="../research/world-models/">面向机器人学习的世界模型与仿真</a></h3>
+          <p class="role">科研助理 · Bo Zhu 教授课题组 · 佐治亚理工学院</p>
+          <p>我在 Bo Zhu 教授课题组参与 RobotGen Studio，围绕世界模型和机器人仿真开展文献梳理与初步实验设计。我关注如何用可执行的世界表示和可控的仿真环境，测试模型或导航系统在环境变化时的表现。</p>
+          <p>目前的切入点是程序化地形的参数搜索：在合理范围内调整坡度、地形起伏和障碍物间距，寻找可以复现的导航困难场景，并在相同仿真预算下比较不同搜索方法。我正在设计简单环境中的起步实验，后续计划将这套搜索流程接入课题组的沙漠模拟器，并随着模拟器的完善逐步扩展。</p>
+          <div class="paper-links"><a href="../research/world-models/">研究方向与当前工作 <span aria-hidden="true">↗</span></a></div>
         </article>
 
         <article class="research-item" id="forecasting">

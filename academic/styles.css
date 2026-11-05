@@ -86,3 +86,12 @@ html[lang="en"] .intro h1{font-size:clamp(42px,4.5vw,60px);letter-spacing:-1.8px
 .cycling-event-album figcaption{font-size:11px;line-height:1.7;color:var(--muted);margin-top:10px}
 @media(max-width:600px){.cycling-event-album{margin-top:21px}.cycling-event-grid{grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:12px}.cycling-event-grid .event-action{grid-column:1/-1;grid-row:1}.cycling-event-grid .event-portrait{grid-column:1;grid-row:2}.cycling-event-grid .event-candid{grid-column:2;grid-row:2;align-self:center}}
 @media print{.cycling-event-album{display:none}}
+
+/* Both current research directions have the same typographic hierarchy. */
+.current-research-list{display:block}
+.current-research-entry{min-width:0}
+.current-research-entry+.current-research-entry{margin-top:13px;padding-top:13px;border-top:1px solid var(--rule)}
+.profile-research .current-research-entry .text-link{font-size:12px;line-height:1.6;font-weight:600}
+.profile-research .current-research-entry .note-status{font-size:10px;line-height:1.65;margin-top:5px}
+@media(max-width:760px){.profile-research .current-research-entry .text-link{font-size:12px}.profile-research .current-research-entry .note-status{font-size:10px}}
+@media(max-width:420px){.intro-note.profile-aside{grid-template-columns:1fr;gap:23px;max-width:100%}.profile-portrait{width:148px;grid-column:1;grid-row:1}.profile-research{grid-column:1;grid-row:2;width:100%;border-top:1px solid var(--rule);padding-top:18px}.profile-research .margin-label{margin-bottom:12px}.current-research-entry+.current-research-entry{margin-top:12px;padding-top:12px}}
