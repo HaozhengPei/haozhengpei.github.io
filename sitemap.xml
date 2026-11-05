@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://haozhengpei.github.io/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haozhengpei.github.io/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haozhengpei.github.io/" />
+  </url>
+  <url>
+    <loc>https://haozhengpei.github.io/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haozhengpei.github.io/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haozhengpei.github.io/" />
+  </url>
+  <url>
+    <loc>https://haozhengpei.github.io/academic/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haozhengpei.github.io/academic/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/academic/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haozhengpei.github.io/academic/" />
+  </url>
+  <url>
+    <loc>https://haozhengpei.github.io/zh/academic/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haozhengpei.github.io/academic/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/academic/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haozhengpei.github.io/academic/" />
+  </url>
+  <url>
+    <loc>https://haozhengpei.github.io/research/mode-recall/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haozhengpei.github.io/research/mode-recall/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/research/mode-recall/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haozhengpei.github.io/research/mode-recall/" />
+  </url>
+  <url>
+    <loc>https://haozhengpei.github.io/zh/research/mode-recall/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haozhengpei.github.io/research/mode-recall/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/research/mode-recall/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haozhengpei.github.io/research/mode-recall/" />
+  </url>
+  <url>
+    <loc>https://haozhengpei.github.io/research/clink-chop-thud/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haozhengpei.github.io/research/clink-chop-thud/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/research/clink-chop-thud/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haozhengpei.github.io/research/clink-chop-thud/" />
+  </url>
+  <url>
+    <loc>https://haozhengpei.github.io/zh/research/clink-chop-thud/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://haozhengpei.github.io/research/clink-chop-thud/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/research/clink-chop-thud/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://haozhengpei.github.io/research/clink-chop-thud/" />
+  </url>
+</urlset>
