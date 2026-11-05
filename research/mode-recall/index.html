@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" class="research-page">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Haozheng Pei’s first-author research on finite-sample certification of generative-model mode coverage, accounting for imperfect classifier labels.">
+  <title>Certifying Generative Mode Coverage · Haozheng Pei</title>
+  <link rel="canonical" href="https://haozhengpei.github.io/research/mode-recall/">
+  <link rel="alternate" hreflang="en" href="https://haozhengpei.github.io/research/mode-recall/">
+  <link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/research/mode-recall/">
+  <link rel="icon" href="../../assets/favicon.svg?v=9bde83f793" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/research-pages.css?v=7335092413">
+  <script src="../../language.js?v=802c5b58a4" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="detail-header">
+  <a class="detail-brand" href="../../index.html">Haozheng Pei</a>
+  <nav aria-label="Page navigation">
+    <a href="../../academic/index.html">Academic version</a>
+    <a class="language-switch" href="../../zh/research/mode-recall/index.html" lang="zh-CN" hreflang="zh-CN" aria-label="切换为中文">中文</a>
+  </nav>
+</header>
+<main id="main">
+  <article>
+    <header class="paper-header">
+      <p class="paper-kicker">Research · Manuscript under review</p>
+      <h1>Certifying What Your Generative Model Covers: Labeller-Conditional, Finite-Sample Mode-Recall Guarantees</h1>
+      <p class="paper-role">First-author work · ICLR 2027, under review</p>
+      <p class="paper-deck">A generator can produce convincing images while rarely producing some classes or attribute combinations. I study how finite samples can support reliable conclusions about that coverage, even when the classifier used to label samples makes mistakes.</p>
+      <div class="paper-actions">
+        <a href="../../assets/papers/certifying-generative-mode-coverage.pdf?v=0745bf74af">Manuscript (PDF) <span aria-hidden="true">↗</span></a>
+        <a href="#results">Selected results <span aria-hidden="true">↓</span></a>
+      </div>
+    </header>
+
+    <figure class="paper-figure">
+      <a href="../../assets/research/mode-recall-coverage.png" target="_blank" rel="noopener" aria-label="View full-size figure"><img src="../../assets/research/mode-recall-coverage.png" width="1100" height="800" alt="StackedMNIST experiment: the blue certified lower bound follows the dashed true coverage, while red nearest-neighbour recall overstates coverage as modes are removed." decoding="async"></a>
+      <figcaption>Figure 7 from the manuscript. Controlled removal of StackedMNIST’s 1,000 modes; mean and standard deviation over 12 seeds per removal level.</figcaption>
+    </figure>
+
+    <section class="paper-section" id="question">
+      <h2>The question</h2>
+      <p>Has a model omitted a mode, or have we simply not sampled enough? A low coverage estimate alone cannot distinguish these possibilities. Feature-space recall can also conflate image fidelity with mode coverage.</p>
+    </section>
+
+    <section class="paper-section" id="method">
+      <h2>The method</h2>
+      <p>For a chosen frequency threshold, the procedure classifies each mode as at or above threshold, below threshold, or inconclusive. Independent sample splits and confusion-aware thresholds account for labelling errors. A robust linear-programming variant works with a joint confidence set for classifier confusion and mode frequencies.</p>
+    </section>
+
+    <section class="paper-section" id="results">
+      <h2>Selected results</h2>
+      <div class="results-table">
+        <table>
+          <caption>StackedMNIST, 1,000 modes; selected rows from Table 1. Certified values are mean ± standard deviation over 12 seeds.</caption>
+          <thead><tr><th scope="col">Modes removed</th><th scope="col">True coverage</th><th scope="col">Certified bound</th><th scope="col">NN recall</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">0%</th><td>1.00</td><td>0.86 ± 0.01</td><td>0.97</td></tr>
+            <tr><th scope="row">50%</th><td>0.50</td><td>0.50 ± 0.00</td><td>0.81</td></tr>
+            <tr><th scope="row">90%</th><td>0.10</td><td>0.10 ± 0.00</td><td>0.28</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The certified bound never exceeded true coverage in all 120 trials across ten removal levels. These experiments check the method’s behaviour; finite-sample validity comes from the analysis. Further experiments cover DCGANs, rectified flow, pretrained diffusion and attribute-defined subgroups.</p>
+    </section>
+
+    <section class="paper-section" id="contribution">
+      <h2>My contribution</h2>
+      <p>My work includes developing the certification framework, proving validity and consistency results, deriving rare-mode sample-complexity bounds, and conducting experiments across generator families. Consistency is established for the LP variant; the default deconvolved rule remains valid but can be conservative.</p>
+    </section>
+
+    <section class="paper-section" id="scope">
+      <h2>What the guarantee covers</h2>
+      <p>The guarantee depends on classifier-confusion bounds holding on generated samples. It concerns frequencies of labeller-defined subgroups, not diversity within each subgroup. Rare modes and sparse calibration can leave decisions inconclusive. A human audit of generated CelebA-HQ faces found that classifier transfer held for some attributes and failed for others, making this assumption an explicit part of the evaluation.</p>
+    </section>
+  </article>
+</main>
+<footer class="detail-footer"><a href="../../index.html#research">Back to research</a><a href="../../academic/index.html">Academic version <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>

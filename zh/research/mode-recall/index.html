@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN" class="research-page">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="裴浩正的第一作者研究：考虑标签器误差，用有限样本认证生成模型的模式覆盖情况，并区分低于频率阈值与证据不足。">
+  <title>生成模型的模式覆盖认证 · 裴浩正</title>
+  <link rel="canonical" href="https://haozhengpei.github.io/zh/research/mode-recall/">
+  <link rel="alternate" hreflang="en" href="https://haozhengpei.github.io/research/mode-recall/">
+  <link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/research/mode-recall/">
+  <link rel="icon" href="../../../assets/favicon.svg?v=9bde83f793" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../assets/research-pages.css?v=7335092413">
+  <link rel="stylesheet" href="../../../assets/chinese-typography.css?v=18f2d78ca2">
+  <script src="../../../language.js?v=802c5b58a4" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="detail-header">
+  <a class="detail-brand" href="../../../zh/index.html">裴浩正</a>
+  <nav aria-label="页面导航">
+    <a href="../../../zh/academic/index.html">学术版</a>
+    <a class="language-switch" href="../../../research/mode-recall/index.html" lang="en" hreflang="en" aria-label="Switch to English">English</a>
+  </nav>
+</header>
+<main id="main">
+  <article>
+    <header class="paper-header">
+      <p class="paper-kicker">研究 · 论文审稿中</p>
+      <h1>考虑标签器误差的生成模型模式覆盖认证</h1>
+      <p class="paper-subtitle" lang="en">Certifying What Your Generative Model Covers: Labeller-Conditional, Finite-Sample Mode-Recall Guarantees</p>
+      <p class="paper-role">第一作者工作 · ICLR 2027，审稿中</p>
+      <p class="paper-deck">生成的图像看起来很真实，并不代表模型充分覆盖了不同类别和属性组合。我研究如何用有限样本判断模型覆盖了哪些模式，并把分类器的标注误差纳入判断。</p>
+      <div class="paper-actions">
+        <a href="../../../assets/papers/certifying-generative-mode-coverage.pdf?v=0745bf74af">论文全文（PDF）<span aria-hidden="true">↗</span></a>
+        <a href="#results">实验结果 <span aria-hidden="true">↓</span></a>
+      </div>
+    </header>
+
+    <figure class="paper-figure">
+      <a href="../../../assets/research/mode-recall-coverage.png" target="_blank" rel="noopener" aria-label="查看原尺寸图表"><img src="../../../assets/research/mode-recall-coverage.png" width="1100" height="800" alt="StackedMNIST 实验：随着模式被移除，蓝色认证下界随黑色虚线表示的真实覆盖率下降，红色最近邻召回率则高估覆盖情况。" decoding="async"></a>
+      <figcaption>论文图 7：在 StackedMNIST 的 1,000 个模式中按比例移除模式。每个移除比例运行 12 个随机种子，图中为均值与标准差。</figcaption>
+    </figure>
+
+    <section class="paper-section" id="question">
+      <h2>研究问题</h2>
+      <p>没有在样本中看到某个模式，究竟是模型生成得太少，还是采样量不够？单独一个较低的覆盖率估计无法区分这两种情况。基于特征空间的召回率还可能把图像质量与模式覆盖混在一起。</p>
+    </section>
+
+    <section class="paper-section" id="method">
+      <h2>方法</h2>
+      <p>给定生成频率阈值后，方法逐个判断模式属于“达到阈值”“低于阈值”还是“证据不足”。通过独立样本划分和考虑混淆误差的判定阈值，控制错误认证的风险。针对标签器误差存在不确定性的情况，研究还使用联合置信集合上的线性规划进行稳健认证。</p>
+    </section>
+
+    <section class="paper-section" id="results">
+      <h2>部分实验结果</h2>
+      <div class="results-table">
+        <table>
+          <caption>StackedMNIST，1,000 个模式；节选自论文表 1。认证下界为 12 个随机种子的均值 ± 标准差。</caption>
+          <thead><tr><th scope="col">移除比例</th><th scope="col">真实覆盖率</th><th scope="col">认证下界</th><th scope="col">最近邻召回率</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">0%</th><td>1.00</td><td>0.86 ± 0.01</td><td>0.97</td></tr>
+            <tr><th scope="row">50%</th><td>0.50</td><td>0.50 ± 0.00</td><td>0.81</td></tr>
+            <tr><th scope="row">90%</th><td>0.10</td><td>0.10 ± 0.00</td><td>0.28</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>在十个移除比例、共 120 次实验中，认证下界均未超过真实覆盖率。这些实验用于检验方法的实际表现，有限样本有效性由理论分析给出。其他实验涵盖 DCGAN、流匹配、预训练扩散模型，以及由属性组合定义的子群。</p>
+    </section>
+
+    <section class="paper-section" id="contribution">
+      <h2>我的工作</h2>
+      <p>我参与建立认证框架，证明有效性与一致性结果，推导稀有模式认证的样本复杂度界，并开展不同生成模型上的实验。其中，一致性结论针对线性规划版本；默认的去卷积判定规则保持有效，但可能较为保守。</p>
+    </section>
+
+    <section class="paper-section" id="scope">
+      <h2>适用范围</h2>
+      <p>统计保证要求标签器的混淆误差界在生成样本上也成立。它认证的是标签器所定义子群的生成频率，不能判断子群内部是否仍然缺少多样性。稀有模式和不足的校准数据都可能导致“证据不足”。对 CelebA-HQ 生成图像的人工审核也发现，标签器在部分属性上的表现能够迁移，在另一些属性上则不能，因此这项假设需要单独检验。</p>
+    </section>
+  </article>
+</main>
+<footer class="detail-footer"><a href="../../../zh/index.html#research">返回研究列表</a><a href="../../../zh/academic/index.html">学术版 <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>

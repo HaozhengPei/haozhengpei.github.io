@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" class="research-page">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clink! Chop! Thud! · Haozheng Pei</title>
+  <meta name="description" content="Learning which objects produce interaction sounds from egocentric video. ICCV 2025 research with Haozheng Pei.">
+  <link rel="canonical" href="https://haozhengpei.github.io/research/clink-chop-thud/">
+  <link rel="alternate" hreflang="en" href="https://haozhengpei.github.io/research/clink-chop-thud/">
+  <link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/research/clink-chop-thud/">
+  <link rel="icon" href="../../assets/favicon.svg?v=9bde83f793" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/research-pages.css?v=7335092413">
+  <script src="../../language.js?v=802c5b58a4" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="detail-header">
+  <a class="detail-brand" href="../../index.html">Haozheng Pei</a>
+  <nav aria-label="Page navigation">
+    <a href="../../academic/index.html">Academic version</a>
+    <a class="language-switch" href="../../zh/research/clink-chop-thud/index.html" lang="zh-CN" hreflang="zh-CN" aria-label="切换为中文">中文</a>
+  </nav>
+</header>
+<main id="main">
+  <article>
+    <header class="paper-header">
+      <p class="paper-kicker">Published · ICCV 2025</p>
+      <h1>Clink! Chop! Thud!</h1>
+      <p class="paper-subtitle">Learning Object Sounds from Real-World Interactions</p>
+      <p class="paper-authors">Mengyu Yang, Yiming Chen, <strong>Haozheng Pei</strong>, Siddhant Agarwal, Arun Balajee Vasudevan, James Hays</p>
+      <p class="paper-role">Third author · Georgia Institute of Technology</p>
+      <p class="paper-deck">A sound can tell us which objects are interacting. We study how to connect everyday interaction sounds to the objects that produce them.</p>
+      <div class="paper-actions">
+        <a href="../../assets/papers/clink-chop-thud.pdf?v=28464b5153">Read paper ↗</a>
+        <a href="https://clink-chop-thud.github.io/" target="_blank" rel="noopener noreferrer">Project ↗</a>
+        <a href="https://github.com/mengyu-yang/clink-chop-thud" target="_blank" rel="noopener noreferrer">Code &amp; data ↗</a>
+      </div>
+    </header>
+
+    <figure class="paper-figure">
+      <a href="../../assets/research/clink-results.png" target="_blank" rel="noopener" aria-label="View full-size figure"><img src="../../assets/research/clink-results.png" alt="Four examples of sounding-object detection, comparing video frames, ground-truth object masks, and audio–visual scores for candidate regions." width="1312" height="452"></a>
+      <figcaption>Figure 5 from the paper. Each triplet shows the video frame, ground-truth object mask, and audio–visual scores for candidate object regions. Red indicates stronger correspondence; blue indicates weaker correspondence.</figcaption>
+    </figure>
+
+    <section class="paper-section" id="question">
+      <h2>Which object made the sound?</h2>
+      <p>When a knife hits a chopping board, the scene contains many objects but only a few participate in the sound. Our sounding-object detection task asks a model to choose the relevant object from candidate regions using the interaction’s video and audio. We also evaluate whether an action produces sound at all.</p>
+    </section>
+
+    <section class="paper-section" id="method">
+      <h2>Learning from the interaction</h2>
+      <p>An automatic hand–object detection and SAM 2 pipeline provides object masks for training. These masks select visual patch features, while a pretrained slot-attention model supplies an object prior. Contrastive-consensus pretraining aligns vision, audio, and language. Fine-tuning then uses background regions from the same scene as hard negative audio–visual pairs.</p>
+      <figure class="paper-figure">
+        <a href="../../assets/research/clink-method.png" target="_blank" rel="noopener" aria-label="View full-size figure"><img src="../../assets/research/clink-method.png" alt="Object masks guide visual patch selection; non-interaction regions form hard negative pairs with the audio." width="1248" height="320" loading="lazy"></a>
+        <figcaption>Figure 3 from the paper. Object masks guide feature selection; background regions help the model distinguish the interaction from the rest of the scene.</figcaption>
+      </figure>
+    </section>
+
+    <section class="paper-section" id="results">
+      <h2>Results</h2>
+      <p>The sounding-object benchmark evaluates 583 clips from EPIC-KITCHENS and 572 from Ego4D, with manually annotated ground-truth objects. A prediction succeeds when the highest-scoring candidate matches a sounding object.</p>
+      <div class="table-scroll">
+        <table class="results-table">
+          <caption>Top-1 accuracy (%) · Base-model results from Table 2</caption>
+          <thead><tr><th scope="col">Method</th><th scope="col">EPIC-KITCHENS</th><th scope="col">Ego4D</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">SoundingActions, fine-tuned</th><td>41.0</td><td>35.1</td></tr>
+            <tr><th scope="row">Our base model</th><td><strong>49.6</strong></td><td><strong>43.9</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The gains are 8.6 and 8.8 percentage points, respectively. Ablations examine the effects of object masking and slot attention.</p>
+    </section>
+
+    <section class="paper-section" id="contribution">
+      <h2>My contribution</h2>
+      <p>I contributed to the object-mask annotation and feature-processing pipelines, along with comparative evaluation and ablation studies on EPIC-KITCHENS and Ego4D.</p>
+    </section>
+
+    <section class="paper-section" id="scope">
+      <h2>Evaluation scope</h2>
+      <p>The task assumes candidate object masks are provided. If the candidate detector misses a sounding object, its ground-truth mask is added to the pool. The reported accuracy therefore measures selection among object candidates, rather than end-to-end object discovery or precise boundary prediction.</p>
+    </section>
+  </article>
+</main>
+<footer class="detail-footer"><a href="../../index.html">Personal website</a><a href="../../academic/index.html">Academic version</a></footer>
+</body>
+</html>

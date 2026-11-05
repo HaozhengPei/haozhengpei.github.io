@@ -13,10 +13,10 @@
   <link rel="canonical" href="https://haozhengpei.github.io/zh/academic/">
   <link rel="alternate" hreflang="en" href="https://haozhengpei.github.io/academic/">
   <link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/academic/">
-  <link rel="stylesheet" href="../../academic/styles.css?v=aaa7f518c4">
-  <link rel="stylesheet" href="../../assets/chinese-typography.css?v=da5b8d9598">
-  <link rel="preload" href="../../assets/fonts/noto-sans-sc-site.woff2?v=94ace01bb1" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../../assets/fonts/noto-serif-sc-site.woff2?v=a93e1036c6" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../academic/styles.css?v=f6f4fb6141">
+  <link rel="stylesheet" href="../../assets/chinese-typography.css?v=18f2d78ca2">
+  <link rel="preload" href="../../assets/fonts/noto-sans-sc-site.woff2?v=71ca4dcef0" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/noto-serif-sc-site.woff2?v=3c5485f145" as="font" type="font/woff2" crossorigin>
   <script src="../../academic/script.js?v=755f562096" defer></script>
   <script src="../../language.js?v=802c5b58a4" defer></script>
   <link rel="stylesheet" href="../../assets/photo-viewer.css?v=28ba1ac8b4">
@@ -45,8 +45,8 @@
         <p class="eyebrow">佐治亚理工学院</p>
         <h1 id="name">裴浩正</h1>
         <p class="intro-location">家在北京 · 现居亚特兰大</p>
-        <p class="intro-body">我是佐治亚理工学院的本科生，主修数学、工业与系统工程。研究方向包括流匹配、扩散模型和世界模型。</p>
-        <p class="intro-body">我目前主要研究生成模型的模式覆盖问题，用有限样本判断模型是否遗漏了某些模式，并分析这些判断的可靠性。</p>
+        <p class="intro-body">我是佐治亚理工学院的本科生，主修数学、工业与系统工程。</p>
+        <p class="intro-body">我主要研究如何用有限样本判断生成模型覆盖了哪些模式、遗漏了哪些模式，以及这些判断有多可靠，涉及扩散模型和流匹配。近期也在探索用可执行程序表示世界，服务于机器人学习。</p>
         <p class="intro-personal">平时我喜欢打网球和羽毛球，家里还有两只哈士奇——哈佛和耶鲁，是我的两个兄弟。 <a href="#outside">研究之外 <span aria-hidden="true">↓</span></a></p>
         <div class="intro-links">
           <a href="mailto:hpei8@gatech.edu">学校邮箱 <span aria-hidden="true">↗</span></a>
@@ -69,39 +69,40 @@
       <div class="section-heading"><span class="section-number" aria-hidden="true">01</span><h2 id="research-title">研究</h2></div>
       <div class="section-content">
         <article class="research-item" id="mode-recall">
-          <div class="item-topline"><span class="venue">ICLR 2027 · 审稿中</span><span class="date">2026 年 5 月—至今</span></div>
-          <h3>生成模型的模式覆盖率认证</h3>
-          <p class="role">第一作者 · Certified Mode-Recall for Generative Models</p>
-          <p>我建立了一套模式覆盖率认证框架，考虑样本有限和分类器误标的情况。在给定标签器的条件下，它对每个模式给出“存在”“缺失”或“证据不足”的判定。</p>
-          <p>我证明了这一方法的有效性与一致性，推导了稀有模式认证的样本复杂度界，并在 StackedMNIST、CIFAR-10 和 CelebA 子群上评估了 GAN、流匹配和预训练扩散模型。</p>
-          <div class="topic-line">生成模型评估 <span>·</span> 有限样本界 <span>·</span> 扩散与流匹配</div>
+          <div class="item-topline"><span class="venue">ICLR 2027 <span class="publication-status">审稿中</span></span><span class="date">2026 年 5 月—至今</span></div>
+          <h3><a href="../research/mode-recall/">生成模型的模式覆盖率认证</a></h3>
+          <p class="paper-title-original" lang="en">Certifying What Your Generative Model Covers: Labeller-Conditional, Finite-Sample Mode-Recall Guarantees</p>
+          <p class="role">第一作者</p>
+          <p>我建立了一套有限样本认证框架，在分类器可能误标的情况下，判断预定义模式的概率达到容忍阈值、低于阈值，或现有证据不足以判定。统计保证依赖于标签器的混淆界在生成数据上成立。</p>
+          <p>我证明了方法的有效性和线性规划版本的一致性，推导了稀有模式认证的样本复杂度界，并在 StackedMNIST、CIFAR-10 和 CelebA 子群上评估了 GAN、流匹配和预训练扩散模型。</p>
+          <div class="paper-links"><a href="../../assets/papers/certifying-generative-mode-coverage.pdf?v=0745bf74af" target="_blank" rel="noopener">论文 PDF <span aria-hidden="true">↗</span></a><a href="../research/mode-recall/">研究详情 <span aria-hidden="true">↗</span></a></div>
           <details>
-            <summary>方法与实验 <span aria-hidden="true">+</span></summary>
-            <div class="detail-content"><p>实验包括 StackedMNIST 的 1,000 个模式和 CelebA 的 32 个子群，单次实验最多使用 4 万个生成样本。我将模式覆盖率与常用评估指标进行比较，分析近邻召回指标和 FID 未能反映子群覆盖率下降的情况。</p></div>
+            <summary>实验结果与适用范围 <span aria-hidden="true">+</span></summary>
+            <div class="detail-content"><p>在包含 1,000 个模式的 StackedMNIST 实验中，两种容量的 DCGAN 和一个 rectified flow 模型的认证覆盖率分别为 29%、53% 和 73%，对应真实覆盖率 54%、92% 和 100%；近邻召回指标在三者上均接近零。认证结果是保守下界，不是覆盖率的点估计。研究衡量预定义模式之间的覆盖，不衡量模式内部的多样性。</p></div>
           </details>
         </article>
 
-        <article class="research-item" id="world-models">
-          <div class="item-topline"><span class="venue">RobotGen Studio</span><span class="date">2026 年 10 月—至今</span></div>
-          <h3>世界模型与机器人学习</h3>
-          <p class="role">Bo Zhu 教授课题组 · 科研助理</p>
-          <p>这个项目希望从真实图像和视频出发，构建可交互的机器人仿真环境，再从中生成任务、操作示范和数据，用于训练和微调视觉—语言—动作模型（VLA）。</p>
-          <p>我参与相关文献的梳理和方案讨论，研究如何设计持久记忆与端到端自我改进机制，以及如何结合代码智能体和复杂物理仿真生成操作示范。目前项目仍在开发原型。</p>
-          <div class="topic-line">世界模型 <span>·</span> 机器人学习 <span>·</span> 物理仿真</div>
+        <article class="research-item" id="object-sounds">
+          <div class="item-topline"><span class="venue">ICCV 2025 <span class="publication-status">已发表</span></span><span class="date">2024 年 9 月—2025 年 3 月</span></div>
+          <h3><a href="../research/clink-chop-thud/">Clink! Chop! Thud!<br>从真实交互中学习物体的声音</a></h3>
+          <p class="paper-authors" lang="en">Mengyu Yang, Yiming Chen, <strong>Haozheng Pei</strong>, Siddhant Agarwal, Arun Balajee Vasudevan, James Hays</p>
+          <p class="role">第三作者 · 佐治亚理工学院</p>
+          <p>这项研究结合声音和画面，在真实的第一视角视频中判断交互声音来自哪个物体。ICCV 版本在 EPIC-KITCHENS 和 Ego4D 上的发声物体检测 top-1 准确率分别为 49.6% 和 43.9%。</p>
+          <p>我参与搭建物体级监督所需的数据标注和特征处理流程，并在 EPIC-KITCHENS 和 Ego4D 上进行了模型评估与消融实验。</p>
+          <div class="paper-links"><a href="../../assets/papers/clink-chop-thud.pdf?v=28464b5153" target="_blank" rel="noopener">论文 PDF <span aria-hidden="true">↗</span></a><a href="https://clink-chop-thud.github.io/" target="_blank" rel="noopener">项目主页 <span aria-hidden="true">↗</span></a><a href="https://github.com/mengyu-yang/clink-chop-thud" target="_blank" rel="noopener">代码 <span aria-hidden="true">↗</span></a><a href="../research/clink-chop-thud/">研究详情 <span aria-hidden="true">↗</span></a></div>
         </article>
 
-        <article class="research-item" id="object-sounds">
-          <div class="item-topline"><span class="venue">ICCV 2025</span><span class="date">2024 年 9 月—2025 年 3 月</span></div>
-          <h3>Clink! Chop! Thud!<br>从真实交互中学习物体的声音</h3>
-          <p class="role">第三作者 · 佐治亚理工学院</p>
-          <p>这项研究结合声音和画面，在真实的第一视角视频中，判断交互声音来自哪个物体，并定位这个物体。</p>
-          <p>我参与搭建物体级监督所需的数据标注和特征处理流程，并在 EPIC-KITCHENS 和 Ego4D 上进行了模型评估与消融实验。</p>
-          <div class="paper-links"><a href="https://openaccess.thecvf.com/content/ICCV2025/html/Yang_Clink_Chop_Thud_-_Learning_Object_Sounds_from_Real-World_Interactions_ICCV_2025_paper.html" target="_blank" rel="noopener">论文 <span aria-hidden="true">↗</span></a><a href="https://clink-chop-thud.github.io/" target="_blank" rel="noopener">项目主页 <span aria-hidden="true">↗</span></a></div>
-          <div class="topic-line">视听学习 <span>·</span> 第一视角视频 <span>·</span> 发声物体检测</div>
+        <article class="research-item" id="world-models">
+          <div class="item-topline"><span class="venue">RobotGen Studio <span class="publication-status">在研</span></span><span class="date">2026 年 10 月—至今</span></div>
+          <h3><a href="../research/world-models/">程序世界模型与机器人学习</a></h3>
+          <p class="role">Bo Zhu 教授课题组 · 科研助理</p>
+          <p>我围绕代码世界模型开展文献梳理与问题分析，研究可执行程序中的世界状态，如何通过中间场景表示（proxy）约束视频生成，以及这些表示如何用于机器人学习。</p>
+          <p>目前关注三个问题：如何区分程序、proxy 和生成视频中的错误；修改世界规则时，如何保留已有状态与历史；proxy 需要保留哪些信息，才能支持具体任务的判断。工作仍处于前期文献梳理和研究问题形成阶段。</p>
+          <div class="paper-links"><a href="../research/world-models/">研究问题与背景 <span aria-hidden="true">↗</span></a></div>
         </article>
 
         <article class="research-item" id="forecasting">
-          <div class="item-topline"><span class="venue">佐治亚理工学院 · 电力市场研究</span><span class="date">2025 年 8 月—2026 年 8 月</span></div>
+          <div class="item-topline"><span class="venue">佐治亚理工学院 <span class="publication-status">研究项目</span></span><span class="date">2025 年 8 月—2026 年 8 月</span></div>
           <h3>风电与电力市场的概率预测</h3>
           <p>这项研究对风电和光伏发电量进行概率预测，分析发电的不确定性如何影响不平衡电价、电力调度和市场价格。</p>
           <p>我从覆盖万余个资产的风机与气象数据中提取时空特征，使用结合领域知识的 Transformer 和 DKFormer 进行预测，并与 ARIMA、SVM 等基线模型比较。同时采用集成学习和贝叶斯模型组合，综合不同模型的预测结果。</p>

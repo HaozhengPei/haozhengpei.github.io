@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN" class="research-page">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clink! Chop! Thud! · 裴浩正</title>
+  <meta name="description" content="从第一视角视频中学习日常交互的声音与物体之间的关系。裴浩正参与的 ICCV 2025 研究。">
+  <link rel="canonical" href="https://haozhengpei.github.io/zh/research/clink-chop-thud/">
+  <link rel="alternate" hreflang="en" href="https://haozhengpei.github.io/research/clink-chop-thud/">
+  <link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/research/clink-chop-thud/">
+  <link rel="icon" href="../../../assets/favicon.svg?v=9bde83f793" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../assets/research-pages.css?v=7335092413">
+  <link rel="stylesheet" href="../../../assets/chinese-typography.css?v=18f2d78ca2">
+  <script src="../../../language.js?v=802c5b58a4" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="detail-header">
+  <a class="detail-brand" href="../../index.html">裴浩正</a>
+  <nav aria-label="页面导航">
+    <a href="../../academic/index.html">学术版</a>
+    <a class="language-switch" href="../../../research/clink-chop-thud/index.html" lang="en" hreflang="en" aria-label="Switch to English">English</a>
+  </nav>
+</header>
+<main id="main">
+  <article>
+    <header class="paper-header">
+      <p class="paper-kicker">已发表 · ICCV 2025</p>
+      <h1>Clink! Chop! Thud!</h1>
+      <p class="paper-subtitle">从真实交互中学习物体的声音</p>
+      <p class="paper-authors">Mengyu Yang, Yiming Chen, <strong>Haozheng Pei</strong>, Siddhant Agarwal, Arun Balajee Vasudevan, James Hays</p>
+      <p class="paper-role">第三作者 · 佐治亚理工学院</p>
+      <p class="paper-deck">听到切菜或物体碰撞的声音时，我们往往能判断哪些物体正在发生交互。这项工作研究如何让模型从第一视角视频中学到这种联系。</p>
+      <div class="paper-actions">
+        <a href="../../../assets/papers/clink-chop-thud.pdf?v=28464b5153">阅读论文 ↗</a>
+        <a href="https://clink-chop-thud.github.io/" target="_blank" rel="noopener noreferrer">项目主页 ↗</a>
+        <a href="https://github.com/mengyu-yang/clink-chop-thud" target="_blank" rel="noopener noreferrer">代码与数据 ↗</a>
+      </div>
+    </header>
+
+    <figure class="paper-figure">
+      <a href="../../../assets/research/clink-results.png" target="_blank" rel="noopener" aria-label="查看原尺寸图表"><img src="../../../assets/research/clink-results.png" alt="四组发声物体检测示例，比较视频画面、真实物体掩码与候选区域的视听匹配分数。" width="1312" height="452"></a>
+      <figcaption>论文图 5。每组三幅图依次为视频画面、真实物体掩码和候选物体区域的视听匹配分数。红色表示匹配程度较高，蓝色表示较低。</figcaption>
+    </figure>
+
+    <section class="paper-section" id="question">
+      <h2>声音来自哪个物体？</h2>
+      <p>刀碰到砧板时，画面里可能还有锅、瓶子和碗，但只有部分物体参与了这次发声。我们提出“发声物体检测”任务：给定交互的视频、声音和候选物体区域，判断哪些物体与声音有关。同时，我们也评估模型能否区分动作本身产生的声音和无关的背景声音。</p>
+    </section>
+
+    <section class="paper-section" id="method">
+      <h2>让模型关注交互区域</h2>
+      <p>训练数据中的物体掩码由手—物体交互检测与 SAM 2 自动生成，用来筛选视觉特征。模型结合预训练的槽注意力结构，在对比学习框架下对齐视觉、音频和语言。微调时，我们把同一画面中未参与交互的区域作为困难负样本，帮助模型区分发声物体与背景。</p>
+      <figure class="paper-figure">
+        <a href="../../../assets/research/clink-method.png" target="_blank" rel="noopener" aria-label="查看原尺寸图表"><img src="../../../assets/research/clink-method.png" alt="根据物体掩码筛选视觉特征，并将非交互区域与音频组合为困难负样本。" width="1248" height="320" loading="lazy"></a>
+        <figcaption>论文图 3。物体掩码用于筛选特征；画面中的背景区域帮助模型辨别哪些区域真正参与了交互。</figcaption>
+      </figure>
+    </section>
+
+    <section class="paper-section" id="results">
+      <h2>实验结果</h2>
+      <p>发声物体检测基准使用 EPIC-KITCHENS 的 583 段视频和 Ego4D 的 572 段视频，真实物体由人工标注。如果得分最高的候选物体是实际参与发声的物体之一，就计为预测正确。</p>
+      <div class="table-scroll">
+        <table class="results-table">
+          <caption>Top-1 准确率（%）· 论文表 2 的基础模型结果</caption>
+          <thead><tr><th scope="col">方法</th><th scope="col">EPIC-KITCHENS</th><th scope="col">Ego4D</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">SoundingActions（经过微调）</th><td>41.0</td><td>35.1</td></tr>
+            <tr><th scope="row">我们的基础模型</th><td><strong>49.6</strong></td><td><strong>43.9</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>相较上述基线，准确率分别提高 8.6 和 8.8 个百分点。消融实验进一步分析了物体掩码和槽注意力各自的作用。</p>
+    </section>
+
+    <section class="paper-section" id="contribution">
+      <h2>我参与的工作</h2>
+      <p>我参与了物体掩码标注与特征处理流程的搭建，以及在 EPIC-KITCHENS 和 Ego4D 上的对比评估和消融实验。</p>
+    </section>
+
+    <section class="paper-section" id="scope">
+      <h2>评估范围</h2>
+      <p>这项任务以已有的候选物体掩码为输入。如果候选检测器漏掉了发声物体，评估时会把对应的真实掩码加入候选集合。因此，这里的准确率衡量的是从候选物体中选出发声物体的能力，不包含从零发现物体或精确预测边界的全部过程。</p>
+    </section>
+  </article>
+</main>
+<footer class="detail-footer"><a href="../../index.html">个人主页</a><a href="../../academic/index.html">学术版</a></footer>
+</body>
+</html>

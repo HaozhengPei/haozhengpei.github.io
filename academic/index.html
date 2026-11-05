@@ -10,7 +10,7 @@
   <meta property="og:type" content="website">
   <title>Haozheng Pei · Research</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23203850'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='36' fill='%23fff'%3EH%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=aaa7f518c4">
+  <link rel="stylesheet" href="styles.css?v=f6f4fb6141">
   <script src="script.js?v=755f562096" defer></script>
   <link rel="canonical" href="https://haozhengpei.github.io/academic/">
   <link rel="alternate" hreflang="en" href="https://haozhengpei.github.io/academic/">
@@ -40,11 +40,10 @@
     <section class="intro" id="top" aria-labelledby="name">
       <div class="intro-main">
         <p class="eyebrow">Georgia Institute of Technology</p>
-        <h1 id="name">Haozheng Pei<span class="name-period">.</span></h1>
+        <h1 id="name">Haozheng Pei</h1>
         <p class="intro-location">Based in Atlanta · Home in Beijing</p>
-        <p class="intro-focus">Generative models.<br>Statistical guarantees.</p>
-        <p class="intro-body">I am an undergraduate at Georgia Tech studying Mathematics and Industrial and Systems Engineering. My research interests include flow matching, diffusion, world models, and the evaluation of generative models.</p>
-        <p class="intro-body">I am interested in what finite samples can tell us about a model: which modes it captures, which it misses, and when we can make those conclusions with confidence.</p>
+        <p class="intro-body">I am an undergraduate at Georgia Tech studying Mathematics and Industrial and Systems Engineering.</p>
+        <p class="intro-body">My research asks which modes a generative model covers or misses, and how confidently we can answer that question from finite samples. I work with diffusion and flow matching, and am also exploring program-based world models for robot learning.</p>
         <p class="intro-personal">Outside research, I play tennis and badminton. My two huskies, Harvard and Yale, are like brothers to me. <a href="#outside">More about me <span aria-hidden="true">↓</span></a></p>
         <div class="intro-links">
           <a href="mailto:hpei8@gatech.edu">University email <span aria-hidden="true">↗</span></a>
@@ -67,39 +66,40 @@
       <div class="section-heading"><span class="section-number" aria-hidden="true">01</span><h2 id="research-title">Research</h2></div>
       <div class="section-content">
         <article class="research-item" id="mode-recall">
-          <div class="item-topline"><span class="venue">ICLR 2027 · Under review</span><span class="date">May 2026–present</span></div>
-          <h3>Certified Mode-Recall for<br class="wide-break"> Generative Models</h3>
+          <div class="item-topline"><span class="venue">ICLR 2027 <span class="publication-status">Under review</span></span><span class="date">May 2026–present</span></div>
+          <h3><a href="../research/mode-recall/">Certifying What Your Generative Model Covers</a></h3>
+          <p class="paper-title-original">Labeller-Conditional, Finite-Sample Mode-Recall Guarantees</p>
           <p class="role">First author</p>
-          <p>A finite-sample framework for certifying whether a generative model covers a mode, even when the classifier used to label samples is imperfect. The framework returns present, absent, or inconclusive conclusions conditional on the labeller.</p>
-          <p>I developed validity and consistency results, with sample-complexity bounds for rare-mode certification, and evaluated GANs, flow matching, and pretrained diffusion models on StackedMNIST, CIFAR-10, and CelebA subgroups.</p>
-          <div class="topic-line">Generative model evaluation <span>·</span> Finite-sample bounds <span>·</span> Diffusion &amp; flow matching</div>
+          <p>A finite-sample framework that certifies whether each predefined mode has probability at or above a tolerance, below it, or leaves the result inconclusive. It accounts for imperfect classifier labels, conditional on the labeller’s confusion bounds holding on generated data.</p>
+          <p>I established validity guarantees and consistency for the linear-programming variant, with sample-complexity bounds for rare-mode certification, and evaluated GANs, flow matching, and pretrained diffusion models on StackedMNIST, CIFAR-10, and CelebA subgroups.</p>
+          <div class="paper-links"><a href="../assets/papers/certifying-generative-mode-coverage.pdf?v=0745bf74af" target="_blank" rel="noopener">Paper PDF <span aria-hidden="true">↗</span></a><a href="../research/mode-recall/">Research overview <span aria-hidden="true">↗</span></a></div>
           <details>
-            <summary>Methods &amp; experiments <span aria-hidden="true">+</span></summary>
-            <div class="detail-content"><p>Experiments include 1,000-mode StackedMNIST and 32 CelebA subgroups, using up to 40,000 generated samples per experiment. The study examines mode coverage alongside conventional generative-model metrics, including cases where nearest-neighbor recall and FID miss losses in subgroup coverage.</p></div>
+            <summary>Results &amp; scope <span aria-hidden="true">+</span></summary>
+            <div class="detail-content"><p>On 1,000-mode StackedMNIST, two DCGAN capacities and a rectified-flow model yielded certified coverage of 29%, 53%, and 73%, against true coverage of 54%, 92%, and 100%; nearest-neighbor recall was near zero for all three. These certificates are conservative lower bounds, not point estimates. The work measures coverage across predefined modes, not diversity within a mode.</p></div>
           </details>
         </article>
 
-        <article class="research-item" id="world-models">
-          <div class="item-topline"><span class="venue">RobotGen Studio · Georgia Tech</span><span class="date">Oct 2026–present</span></div>
-          <h3>World Models and Agent-Driven Simulation for Robot Learning</h3>
-          <p class="role">Research Assistant · Prof. Bo Zhu’s group</p>
-          <p>The project explores constructing simulation environments from real-world images and videos, then generating robot tasks, demonstrations, and training data for vision-language-action models.</p>
-          <p>I contribute to literature review and design discussions on persistent memory and self-improvement, and explore demonstration generation with code agents and complex physical simulation, including cloth, deformable objects, and fluids. The project is in prototype development.</p>
-          <div class="topic-line">World models <span>·</span> Robot learning <span>·</span> Physical simulation</div>
+        <article class="research-item" id="object-sounds">
+          <div class="item-topline"><span class="venue">ICCV 2025 <span class="publication-status">Published</span></span><span class="date">Sep 2024–Mar 2025</span></div>
+          <h3><a href="../research/clink-chop-thud/">Clink! Chop! Thud!<br>Learning Object Sounds from Real-World Interactions</a></h3>
+          <p class="paper-authors">Mengyu Yang, Yiming Chen, <strong>Haozheng Pei</strong>, Siddhant Agarwal, Arun Balajee Vasudevan, James Hays</p>
+          <p class="role">Third author · Georgia Tech</p>
+          <p>Learning which object produces an interaction sound in real-world egocentric video. The ICCV model achieves 49.6% and 43.9% top-1 sounding-object detection accuracy on EPIC-KITCHENS and Ego4D, respectively.</p>
+          <p>I contributed annotation and feature pipelines for object-level supervision, and ran evaluations and ablations on EPIC-KITCHENS and Ego4D.</p>
+          <div class="paper-links"><a href="../assets/papers/clink-chop-thud.pdf?v=28464b5153" target="_blank" rel="noopener">Paper PDF <span aria-hidden="true">↗</span></a><a href="https://clink-chop-thud.github.io/" target="_blank" rel="noopener">Project page <span aria-hidden="true">↗</span></a><a href="https://github.com/mengyu-yang/clink-chop-thud" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a><a href="../research/clink-chop-thud/">My contribution <span aria-hidden="true">↗</span></a></div>
         </article>
 
-        <article class="research-item" id="object-sounds">
-          <div class="item-topline"><span class="venue">ICCV 2025</span><span class="date">Sep 2024–Mar 2025</span></div>
-          <h3>Clink! Chop! Thud!<br>Learning Object Sounds from Real-World Interactions</h3>
-          <p class="role">Third author · Georgia Tech</p>
-          <p>Learning which object in a scene produces an interaction sound from in-the-wild egocentric video. The project connects audio and visual representations to localize sounding objects.</p>
-          <p>I contributed annotation and feature pipelines for object-level supervision, and ran evaluations and ablations on EPIC-KITCHENS and Ego4D.</p>
-          <div class="paper-links"><a href="https://openaccess.thecvf.com/content/ICCV2025/html/Yang_Clink_Chop_Thud_-_Learning_Object_Sounds_from_Real-World_Interactions_ICCV_2025_paper.html" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a><a href="https://clink-chop-thud.github.io/" target="_blank" rel="noopener">Project page <span aria-hidden="true">↗</span></a></div>
-          <div class="topic-line">Audio-visual learning <span>·</span> Egocentric video <span>·</span> Sounding object detection</div>
+        <article class="research-item" id="world-models">
+          <div class="item-topline"><span class="venue">RobotGen Studio <span class="publication-status">Ongoing research</span></span><span class="date">Oct 2026–present</span></div>
+          <h3><a href="../research/world-models/">Program-Based World Models for Robot Learning</a></h3>
+          <p class="role">Research Assistant · Prof. Bo Zhu’s group · Georgia Tech</p>
+          <p>I review code world models and formulate research questions about how executable world state, intermediate visual proxies, and generated video can support robot learning.</p>
+          <p>My current questions concern locating errors across the program, proxy, and video layers; preserving state and history when world rules change; and choosing proxy information relevant to a task. The work is at the literature-review and problem-formulation stage.</p>
+          <div class="paper-links"><a href="../research/world-models/">Research questions &amp; context <span aria-hidden="true">↗</span></a></div>
         </article>
 
         <article class="research-item" id="forecasting">
-          <div class="item-topline"><span class="venue">Georgia Tech · Electric power markets</span><span class="date">Aug 2025–Aug 2026</span></div>
+          <div class="item-topline"><span class="venue">Georgia Tech <span class="publication-status">Research project</span></span><span class="date">Aug 2025–Aug 2026</span></div>
           <h3>Probabilistic Forecasting for<br class="wide-break"> Wind Generation and Power Markets</h3>
           <p>Probabilistic wind and solar forecasts that connect uncertainty in renewable generation to imbalance pricing, dispatch, and price formation.</p>
           <p>I worked with domain-informed Transformer and DKFormer models, ARIMA and SVM baselines, and spatiotemporal features from turbine and weather data covering more than 10,000 assets. The work used ensemble learning and Bayesian model combination to combine forecasts.</p>

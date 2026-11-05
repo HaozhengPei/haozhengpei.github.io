@@ -11,10 +11,10 @@
   <link rel="alternate" hreflang="zh-CN" href="https://haozhengpei.github.io/zh/">
   <link rel="icon" href="../assets/favicon.svg?v=9bde83f793" type="image/svg+xml">
   <link rel="preload" href="../assets/Manrope-Regular.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="../expressive/styles.css?v=0551a837ec">
-  <link rel="stylesheet" href="../assets/chinese-typography.css?v=da5b8d9598">
-  <link rel="preload" href="../assets/fonts/noto-sans-sc-site.woff2?v=94ace01bb1" as="font" type="font/woff2" crossorigin>
-  <script src="../expressive/site.js?v=37a07d27ac" defer></script><script src="../expressive/hero.js?v=54f05e9cb5" defer></script>
+  <link rel="stylesheet" href="../expressive/styles.css?v=79a0a0d4ee">
+  <link rel="stylesheet" href="../assets/chinese-typography.css?v=18f2d78ca2">
+  <link rel="preload" href="../assets/fonts/noto-sans-sc-site.woff2?v=71ca4dcef0" as="font" type="font/woff2" crossorigin>
+  <script src="../expressive/site.js?v=41e77ef2ca" defer></script><script src="../expressive/hero.js?v=54f05e9cb5" defer></script>
   <script src="../language.js?v=802c5b58a4" defer></script>
   <link rel="stylesheet" href="../assets/photo-viewer.css?v=28ba1ac8b4">
   <script src="../assets/photo-viewer.js?v=dce5b9a9ef" defer></script>
@@ -23,7 +23,7 @@
 <a class="skip" href="#main">跳到正文</a>
 <header class="site-header">
   <a class="wordmark" href="#home" aria-label="裴浩正，首页">HP<span>✦</span></a>
-  <nav aria-label="主导航"><a href="#research">研究</a><a href="#life">生活</a><a href="#about">经历</a></nav>
+  <nav aria-label="主导航"><a href="#research">研究</a><a href="#about">经历</a><a href="#life">生活</a></nav>
   <a class="language-switch" href="../index.html" lang="en" hreflang="en" aria-label="Switch to English">English</a>
   <a class="academic-switch" href="academic/index.html">学术版 <span aria-hidden="true">↗</span></a>
 </header>
@@ -33,7 +33,7 @@
       <div class="hero-identity"><p class="hello">你好，我是</p>
       <h1 id="name">裴浩正</h1></div>
       <p class="hero-location">家在北京 · 现居亚特兰大</p>
-      <p class="hero-intro">我是佐治亚理工学院的本科生，正在做<strong>流匹配、扩散模型和世界模型</strong>相关的研究。</p>
+      <p class="hero-intro">我是佐治亚理工学院的本科生，研究如何用有限样本，可靠地判断<strong>生成模型覆盖了什么、遗漏了什么</strong>。</p><p class="hero-research">近期也在探索用于机器人学习的程序世界模型。</p>
       <p class="hero-personal">平时喜欢打网球和羽毛球，还有两个哈士奇兄弟：<a href="#harvard-yale">哈佛和耶鲁</a>。</p>
       <a class="hero-cta" href="#research">我的研究 <span aria-hidden="true">↘</span></a>
     </div>
@@ -45,19 +45,22 @@
   </section>
 
   <section class="research section-wrap" id="research" aria-labelledby="research-title">
-    <div class="section-heading"><h2 id="research-title">研究</h2><p>近期主要研究生成模型的评估方法，<br>也参与世界模型与机器人学习的研究。</p></div>
+    <div class="section-heading"><h2 id="research-title">研究</h2><p>生成模型的覆盖评估、视听学习，<br>以及程序世界模型。</p></div>
     <article class="lead-project" id="mode-recall">
-      <div class="lead-copy"><p class="project-meta">第一作者 <span>·</span> ICLR 2027，审稿中</p><h3>生成模型的<br>模式覆盖率认证</h3><p>我研究如何用有限样本判断生成模型是否遗漏了某些模式，并为判断提供统计保证。框架考虑了分类器的标注误差，区分“存在”“缺失”和“证据不足”三种情况。</p><details><summary>研究内容 <span aria-hidden="true">+</span></summary><div class="details-body"><p>在给定标签器的条件下，我证明了方法的有效性和一致性，并推导了稀有模式认证的样本复杂度界。实验使用 StackedMNIST、CIFAR-10 和 CelebA 子群，评估 GAN、流匹配和预训练扩散模型。</p></div></details><p class="project-date">2026 年 5 月至今</p></div>
-      <figure class="mode-art"><img src="../assets/mode-recall-night-zh.svg?v=b880bb71ab" alt="模式覆盖率认证示意图：存在、缺失或证据不足。" width="640" height="480" loading="lazy"></figure>
+      <div class="lead-copy"><p class="project-meta">第一作者 <span>·</span> ICLR 2027 · 审稿中</p><h3><a href="research/mode-recall/">生成模型的<br>模式覆盖率认证</a></h3><p class="project-subtitle">考虑标签器误差的有限样本保证</p><p>当分类器本身会出错时，如何判断生成模型是否覆盖了某个模式？我提出了有限样本认证框架，逐个判断模式的生成概率是否达到阈值、低于阈值，或证据不足。</p><p class="research-scope">统计保证以标签器的误差界在生成数据上仍然成立为前提。</p><div class="project-links"><a href="research/mode-recall/">研究详情 ↗</a><a href="../assets/papers/certifying-generative-mode-coverage.pdf?v=0745bf74af">论文 PDF ↗</a></div><p class="project-date">2026 年 5 月至今</p></div>
+      <figure class="mode-art paper-evidence"><a href="research/mode-recall/#results"><img src="../assets/research/mode-recall-coverage.png" alt="StackedMNIST 实验：随着模式移除比例增加，认证下界随真实覆盖率变化，最近邻召回率持续高估。" width="1100" height="800" loading="lazy"></a><figcaption>论文图 7 · 1,000 个模式，每个移除比例运行 12 个随机种子。</figcaption></figure>
     </article>
-    <article class="current-project" id="world-models">
-      <div class="current-project-heading"><p class="project-meta">RobotGen Studio · 科研助理</p><h3>世界模型与<br>机器人学习</h3><p class="project-date">2026 年 10 月至今<br>佐治亚理工学院 · Bo Zhu 教授课题组</p></div>
-      <div class="current-project-copy"><p>RobotGen Studio 的目标是从真实图像和视频搭建机器人仿真环境，生成任务、操作示范和训练数据，用来训练视觉—语言—动作模型（VLA）。</p><p>项目还在原型开发阶段。我参与文献调研和方案讨论，研究如何让系统保留长期记忆、持续改进，以及如何结合代码智能体和复杂物理仿真来生成操作示范。</p></div>
-    </article>
-    <div class="supporting-projects">
-      <article class="project" id="object-sounds"><a class="project-image paper-image" href="https://clink-chop-thud.github.io/" target="_blank" rel="noopener noreferrer" aria-label="访问 Clink! Chop! Thud! 项目页"><img src="../assets/clink-teaser.png" alt="Clink! Chop! Thud! 项目示意图：识别交互声音来自哪个物体。" loading="lazy"><span aria-hidden="true">↗</span></a><div class="project-copy"><p class="project-meta">ICCV 2025 <span>·</span> 第三作者</p><h3>Clink! Chop! Thud!</h3><p class="project-subtitle">从真实交互中学习物体的声音</p><p>这项工作利用第一视角视频，识别交互声音来自哪个物体。我参与了物体掩码自动标注和特征处理流程的搭建，以及对比、消融实验。</p><div class="project-links"><a href="https://openaccess.thecvf.com/content/ICCV2025/html/Yang_Clink_Chop_Thud_-_Learning_Object_Sounds_from_Real-World_Interactions_ICCV_2025_paper.html" target="_blank" rel="noopener noreferrer">论文 ↗</a><a href="https://clink-chop-thud.github.io/" target="_blank" rel="noopener noreferrer">项目页 ↗</a><a href="https://github.com/mengyu-yang/clink-chop-thud" target="_blank" rel="noopener noreferrer">代码 ↗</a></div></div></article>
-      <article class="project" id="forecasting"><div class="project-image forecast-image"><img src="../assets/forecast-night-zh.svg?v=9e111f3c6f" alt="带有不确定性区间的预测曲线示意图。" width="640" height="480" loading="lazy"></div><div class="project-copy"><p class="project-meta">佐治亚理工学院 <span>·</span> 2025 年 8 月—2026 年 8 月</p><h3>可再生能源概率预测</h3><p class="project-subtitle">风电预测与电力市场</p><p>我将领域知识融入深度模型，预测风电和光伏发电量及其不确定性，并研究这些不确定性对调度和电力市场决策的影响。</p><details><summary>研究方法 <span aria-hidden="true">+</span></summary><div class="details-body"><p>使用 Transformer、DKFormer 等模型，与 ARIMA、SVM 等基线方法比较；同时结合气象数据的时空特征、集成学习和贝叶斯模型组合。</p></div></details></div></article>
-    </div>
+    <article class="published-project" id="object-sounds"><a class="project-image paper-image" href="research/clink-chop-thud/" aria-label="阅读 Clink! Chop! Thud! 研究详情"><img src="../assets/clink-teaser.png" alt="Clink! Chop! Thud! 论文示意图：从物体交互中识别发声物体。" loading="lazy"><span aria-hidden="true">↗</span></a><div class="project-copy"><p class="project-meta">ICCV 2025 · 已发表 <span>·</span> 第三作者</p><h3><a href="research/clink-chop-thud/">Clink! Chop! Thud!</a></h3><p class="project-subtitle">从真实交互中学习物体的声音</p><p>在第一视角视频中，利用画面和声音，从候选物体中识别真正参与发声的对象。我参与了物体标注与特征处理流程的搭建，以及评估和消融实验。</p><div class="project-links"><a href="research/clink-chop-thud/">研究详情 ↗</a><a href="../assets/papers/clink-chop-thud.pdf?v=28464b5153">论文 PDF ↗</a><a href="https://github.com/mengyu-yang/clink-chop-thud" target="_blank" rel="noopener noreferrer">代码 ↗</a></div></div></article>
+    <article class="current-project" id="world-models"><div class="current-project-heading"><p class="project-meta">RobotGen Studio · 在研</p><h3><a href="research/world-models/">程序世界模型与<br>机器人学习</a></h3><p class="project-date">2026 年 10 月至今<br>佐治亚理工学院 · Bo Zhu 教授课题组</p></div><div class="current-project-copy"><p>我关注如何让编程智能体构建、修改可执行的世界，以及如何检查程序状态、proxy 条件和生成视频是否一致。</p><p>目前主要进行文献梳理和研究问题设计，重点是跨环节的错误定位，以及世界规则改变后，如何保留已有状态与历史。课题仍处于早期探索阶段。</p><div class="project-links"><a href="research/world-models/">研究方向与进展 ↗</a></div></div></article>
+    <article class="forecasting-summary" id="forecasting"><div><p class="project-meta">研究经历 · 2025 年 8 月—2026 年 8 月</p><h3>可再生能源概率预测</h3></div><div><p>我将领域知识融入深度模型，预测风电与光伏发电量及其不确定性，并研究这些不确定性对调度和电力市场决策的影响。</p><p class="forecast-methods">使用 Transformer、DKFormer 等模型，与 ARIMA、SVM 等基线比较，结合气象数据的时空特征、集成学习和贝叶斯模型组合。</p></div></article>
+  </section>
+
+
+  <section class="about section-wrap" id="about" aria-labelledby="about-title">
+    <div class="section-heading"><h2 id="about-title">经历</h2><a class="inline-link" href="../assets/Haozheng_Pei_CV_ZH.pdf?v=ef1d3693ab">完整简历 <span aria-hidden="true">↗</span></a></div>
+    <div class="background-profile"><figure class="background-portrait"><a class="profile-photo-link" href="../assets/photos/haozheng-portrait.jpg" data-photo data-caption="裴浩正"><img src="../assets/photos/haozheng-portrait.jpg" alt="裴浩正" width="2587" height="3621" loading="lazy" decoding="async"></a></figure><div class="background-grid"><div><p class="small-label">教育经历</p><h3>佐治亚理工学院</h3><p>数学、工业与系统工程双专业<br>理学学士</p><p class="muted">预计 2027 年 7 月毕业 · GPA 3.77 / 4.00<br>人工智能与运筹学方向</p></div><div><p class="small-label">教学经历</p><h3>本科课程助教</h3><p>佐治亚理工学院<br>课程包括 ISyE 3030（基础统计方法）</p><p class="muted">2025 年 8 月至今<br>累计担任助教 5 学期，辅导过 100 余名学生。</p></div></div></div>
+    <div class="experience-list"><div class="experience-label">实习经历</div><article><span class="date">2026 年 5 月—8 月</span><h3>银联智策</h3><p>数据分析实习生 · 上海</p><p class="muted">信用违约预测、特征工程与稳定性分析。</p></article><article><span class="date">2025 年 2 月—4 月</span><h3>Hyde Park Investment Service</h3><p>量化研究实习生 · 纽约</p><p class="muted">结合新闻中的市场情绪和宏观经济数据预测黄金价格。</p></article></div>
+    <div class="about-bottom"><p>Python, C++, Java, R · PyTorch, NumPy, SciPy, Pandas · LaTeX, Git</p><a href="academic/index.html">查看学术主页 <span aria-hidden="true">↗</span></a></div>
   </section>
 
   <section class="life section-wrap" id="life" aria-labelledby="life-title">
@@ -81,12 +84,7 @@
     </div>
   </section>
 
-  <section class="about section-wrap" id="about" aria-labelledby="about-title">
-    <div class="section-heading"><h2 id="about-title">经历</h2><a class="inline-link" href="../assets/Haozheng_Pei_CV_ZH.pdf?v=ef1d3693ab">完整简历 <span aria-hidden="true">↗</span></a></div>
-    <div class="background-profile"><figure class="background-portrait"><a class="profile-photo-link" href="../assets/photos/haozheng-portrait.jpg" data-photo data-caption="裴浩正"><img src="../assets/photos/haozheng-portrait.jpg" alt="裴浩正" width="2587" height="3621" loading="lazy" decoding="async"></a></figure><div class="background-grid"><div><p class="small-label">教育经历</p><h3>佐治亚理工学院</h3><p>数学、工业与系统工程双专业<br>理学学士</p><p class="muted">预计 2027 年 7 月毕业 · GPA 3.77 / 4.00<br>人工智能与运筹学方向</p></div><div><p class="small-label">教学经历</p><h3>本科课程助教</h3><p>佐治亚理工学院<br>课程包括 ISyE 3030（基础统计方法）</p><p class="muted">2025 年 8 月至今<br>累计担任助教 5 学期，辅导过 100 余名学生。</p></div></div></div>
-    <div class="experience-list"><div class="experience-label">实习经历</div><article><span class="date">2026 年 5 月—8 月</span><h3>银联智策</h3><p>数据分析实习生 · 上海</p><p class="muted">信用违约预测、特征工程与稳定性分析。</p></article><article><span class="date">2025 年 2 月—4 月</span><h3>Hyde Park Investment Service</h3><p>量化研究实习生 · 纽约</p><p class="muted">结合新闻中的市场情绪和宏观经济数据预测黄金价格。</p></article></div>
-    <div class="about-bottom"><p>Python, C++, Java, R · PyTorch, NumPy, SciPy, Pandas · LaTeX, Git</p><a href="academic/index.html">查看学术主页 <span aria-hidden="true">↗</span></a></div>
-  </section>
+
   <section class="contact section-wrap" id="contact" aria-labelledby="contact-title"><p class="small-label">联系我</p><div class="contact-main"><h2 id="contact-title">聊一聊<span>↗</span></h2><div class="contact-emails"><a href="mailto:hpei8@gatech.edu"><span>学校邮箱</span>hpei8@gatech.edu</a><a href="mailto:haozhengpei@hotmail.com"><span>个人邮箱</span>haozhengpei@hotmail.com</a></div></div><div class="contact-bottom"><a href="https://www.linkedin.com/in/haozheng-pei/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></section>
 </main>
 <footer><a href="#home">裴浩正</a><span>佐治亚理工学院</span><a href="academic/index.html">学术版 ↗</a></footer>
