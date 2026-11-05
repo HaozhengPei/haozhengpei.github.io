@@ -120,13 +120,12 @@
       <div class="section-content">
         <article class="research-item" id="mode-recall">
           <div class="item-topline"><span class="venue">ICLR 2027 <span class="publication-status">Under review</span></span><span class="date">May 2026–present</span></div>
-          <h3><a href="../research/mode-recall/">Certifying What Your Generative Model Covers</a></h3>
+          <h3>Certifying What Your Generative Model Covers</h3>
           <p class="paper-title-original">Labeller-Conditional, Finite-Sample Mode-Recall Guarantees</p>
           <p class="paper-authors" lang="en"><strong>Haozheng Pei</strong><sup>1</sup>, Jian Xu<sup>2</sup></p><p class="paper-affiliations"><sup>1</sup> Georgia Institute of Technology <span aria-hidden="true">·</span> <sup>2</sup> RIKEN</p>
           <p class="role">First author</p>
           <p>A finite-sample framework that certifies whether each predefined mode has probability at or above a tolerance, below it, or leaves the result inconclusive. It accounts for imperfect classifier labels, conditional on the labeller’s confusion bounds holding on generated data.</p>
           <p>I established validity guarantees and consistency for the linear-programming variant, with sample-complexity bounds for rare-mode certification, and evaluated GANs, flow matching, and pretrained diffusion models on StackedMNIST, CIFAR-10, and CelebA subgroups.</p>
-          <div class="paper-links"><a href="https://openreview.net/forum?id=7OVZwupz0E" target="_blank" rel="noopener noreferrer">OpenReview <span aria-hidden="true">↗</span></a><a href="../assets/papers/certifying-generative-mode-coverage.pdf?v=0745bf74af" target="_blank" rel="noopener">Paper PDF <span aria-hidden="true">↗</span></a><a href="../research/mode-recall/">Research overview <span aria-hidden="true">↗</span></a></div>
           <details>
             <summary>Results &amp; scope <span aria-hidden="true">+</span></summary>
             <div class="detail-content"><p>On 1,000-mode StackedMNIST, two DCGAN capacities and a rectified-flow model yielded certified coverage of 29%, 53%, and 73%, against true coverage of 54%, 92%, and 100%; nearest-neighbor recall was near zero for all three. These certificates are conservative lower bounds, not point estimates. The work measures coverage across predefined modes, not diversity within a mode.</p></div>
